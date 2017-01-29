@@ -1,5 +1,10 @@
 // bower:scss
 // endbower
+$default-font-size: 17;
+@mixin font-size($px) {
+    font-size: $px * 1px;
+    font-size: $px / $default-font-size * 1rem;
+}
 
 html {
   -webkit-box-sizing: border-box;
@@ -74,9 +79,37 @@ body{
 p{
   line-height: 1.6;
 }
+a {
+  text-align: center;
+  text-transform: uppercase;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+/* Placeholer text color */
+::-webkit-input-placeholder {
+   color: #FFF;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #FFF;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #FFF;
+}
+:-ms-input-placeholder {
+   color: #FFF;
+}
 /**************************************
  Helper Classes
  **************************************/
+
  .div-frame-outer {
   border: 2px solid #fff;
   padding: 2px;
@@ -85,6 +118,36 @@ p{
   text-align: center;
   background: #fff;
  }
+/**************************************
+ Grid System from http://j4n.co/blog/Creating-your-own-css-grid-system
+ **************************************/
+.grid-container {
+  width: 100%;
+  // max-width: 1200px;
+}
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+}
+.col-1  { width: 8.33%;   }
+.col-2  { width: 16.66%;  }
+.col-3  { width: 25%;     }
+.col-4  { width: 33.33%;  }
+.col-5  { width: 41.66%;  }
+.col-6  { width: 50%;     }
+.col-7  { width: 58.33%;  }
+.col-8  { width: 66.66%;  }
+.col-9  { width: 75%;     }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%;   }
+
 /**************************************
  Skrollr Parallax Helper Classes
  **************************************/
@@ -111,8 +174,45 @@ p{
 /**************************************
  App Styles
  **************************************/
+#nav {
+  position: fixed;
+
+  height: 20%;
+  z-index: 1;
+  background: url("../images/navbar-bg.png") repeat-x left top;
+  ul {
+    margin: 0 auto;
+    width: 33.33%;
+    height: 100%;
+    overflow: hidden;
+
+    li {
+      float: left;
+      line-height: 105px;
+      text-align: center;
+
+      a {
+        // transparent border to stop text
+        // from shifting upon hover state
+        border: 1px solid rgba(0, 0, 0, 0);
+        padding: 5px 8px;
+
+        &:hover {
+          border: 1px solid #000;
+        }
+        #logo {
+          width: 87%;
+          vertical-align: middle;
+        }
+      }
+      &:first-child a:hover {
+        // transparent border on hover
+        border: 1px solid rgba(0, 0, 0, 0);
+      }
+    }
+  }
+}
 #hero-section {
-  background: blue;
   position: relative;
   padding-top: 66.6%;
 
