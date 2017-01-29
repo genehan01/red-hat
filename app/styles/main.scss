@@ -110,14 +110,17 @@ img {
  Helper Classes
  **************************************/
 
- .div-frame-outer {
+.div-frame-outer {
   border: 2px solid #fff;
   padding: 2px;
- }
- .div-frame-inner {
+}
+.div-frame-inner {
   text-align: center;
   background: #fff;
- }
+}
+.margin-center {
+  margin: 0 auto;
+}
 /**************************************
  Grid System from http://j4n.co/blog/Creating-your-own-css-grid-system
  **************************************/
@@ -174,40 +177,36 @@ img {
 /**************************************
  App Styles
  **************************************/
-#nav {
+nav#nav-outer {
   position: fixed;
-
   height: 20%;
   z-index: 1;
   background: url("../images/navbar-bg.png") repeat-x left top;
-  ul {
-    margin: 0 auto;
-    width: 33.33%;
-    height: 100%;
-    overflow: hidden;
 
-    li {
-      float: left;
-      line-height: 105px;
-      text-align: center;
+  #nav-inner {
+    width: 35%;
 
-      a {
-        // transparent border to stop text
-        // from shifting upon hover state
-        border: 1px solid rgba(0, 0, 0, 0);
-        padding: 5px 8px;
+    ul {
+      height: 100%;
 
-        &:hover {
-          border: 1px solid #000;
+      li {
+        line-height: 105px;
+        text-align: center;
+
+        a {
+          // transparent border to stop text
+          // from shifting upon hover state
+          border: 1px solid rgba(0, 0, 0, 0);
+          padding: 5px 8px;
+
+          #logo {
+            width: 87%;
+            vertical-align: middle;
+          }
+          &:hover {
+            border: 1px solid #000;
+          }
         }
-        #logo {
-          width: 87%;
-          vertical-align: middle;
-        }
-      }
-      &:first-child a:hover {
-        // transparent border on hover
-        border: 1px solid rgba(0, 0, 0, 0);
       }
     }
   }
