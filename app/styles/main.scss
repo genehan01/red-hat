@@ -155,7 +155,7 @@ img {
  Skrollr Parallax Helper Classes
  **************************************/
  #skrollr-body {
-  background: url("../images/wood-bg.jpg") repeat-x left top;
+  // background: url("../images/wood-bg.jpg") repeat-x left top;
   height: 100%;
 }
 .skrollr-window {
@@ -185,7 +185,14 @@ nav#nav-outer {
 
   #nav-inner {
     width: 35%;
+    height: 85px;
+    #logo {
 
+      img {
+
+        width: 100%;
+      }
+    }
     ul {
       height: 100%;
 
@@ -198,19 +205,17 @@ nav#nav-outer {
           // from shifting upon hover state
           border: 1px solid rgba(0, 0, 0, 0);
           padding: 5px 8px;
+          transition: border .3s;
 
-          #logo {
-            width: 87%;
-            vertical-align: middle;
-          }
           &:hover {
-            border: 1px solid #000;
+            border: 1px solid rgba(0, 0, 0, 1);
           }
         }
       }
     }
   }
 }
+
 #hero-section {
   position: relative;
   padding-top: 66.6%;
@@ -237,34 +242,37 @@ nav#nav-outer {
     }
   }
 }
-#services-banner.skrollr-window {
-  height: 400px;
-  .skrollr-layer {
-    text-transform: uppercase;
 
-    ul {
-      width: 80%;
-      overflow: hidden;
-      margin: 0 auto;
-      li {
-        float: left;
-        padding: 0 20px;
-        width: 50%;
+#services-banner {
+  background: url("../images/wood.png");
+  background-attachment: fixed;
+  padding: 23px 0;
+  position: relative;
 
-        .div-frame-inner {
-          font-weight: 700;
-          font-size: 30px;
+  img.thin-white-bar {
+    height: 25px;
+  }
+  ul {
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+    li {
+      float: left;
+      padding: 0 20px;
+      width: 50%;
+
+      .div-frame-inner {
+        font-weight: 700;
+        font-size: 30px;
+
+        h3 {
+          text-transform: uppercase;
         }
       }
     }
   }
 }
 
-.white-divider {
-  background-color: #fff;
-  height: 4%;
-
-}
 #our-work-wrapper {
   #our-work-header-con {
     text-align: center;
@@ -296,23 +304,4 @@ nav#nav-outer {
 }
 
 
-/**************************************
-
- **************************************/
-
-/**************************************
-
- **************************************/
-
-/**************************************
-
- **************************************/
-
-/**************************************
-
- **************************************/
-
-/**************************************
-  End of CSS
- **************************************/
 
