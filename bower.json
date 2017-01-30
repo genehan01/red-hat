@@ -2,7 +2,8 @@
   "name": "scrolly-test",
   "private": true,
   "dependencies": {
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "photoswipe": "^4.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

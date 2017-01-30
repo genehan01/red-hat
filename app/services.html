@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/photoswipe.css" />
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/default-skin/default-skin.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="styles/ie8.css">
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.js"></script>
+  <![endif]-->
+
+<!-- Custom styles for this template -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body >
+    <div id="our-work-wrapper">
+      <h3>kitchen and bath</h3>
+      <ul id="kitchen-and-bath" class="our-work-items">
+        <li class="our-work-item" data-index=""><img src="[{{http://placehold.it/350x150}}]" alt=""></li>
+        <li class="our-work-item"><img src="http://placehold.it/200x500" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
+      </ul>
+    </div>
+
+    <div id="our-work-wrapper">
+      <h3>home remodels</h3>
+      <ul id="home-remodels" class="our-work-items">
+        <li class="our-work-item "><img src="http://lorempixel.com/400/200/sports" alt=""></li>
+        <li class="our-work-item"><img src="http://lorempixel.com/200/400/sports" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <button id="btn"></button>
+      </ul>
+    </div>
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader- active when preloader is running -->
+                <div class="pswp__preloader">
+                  <div class="pswp__preloader__icn">
+                    <div class="pswp__preloader__cut">
+                      <div class="pswp__preloader__donut"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+              </div>
+
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+              </button>
+
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+              </button>
+
+              <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+<script>
+  (function () {
+    // add additional for loop here to dynamically name the var
+    var photoSwipeImages = [
+      [    [gallery image one, gallery image two, ....] first of six image in grid              ],// kitchen images
+      [                                                                                         ],// home remodels
+      [                                                                                         ],
+      // {{ for image in images }}
+      //   {{ image.url }}
+      // {{ endfor }} ,
+    ];
+
+
+    var {{kitchenAndBathImages}} = ["http://placehold.it/350x150", "http://placehold.it/200x500"];
+    var kitchenAndBathImages = ["http://placehold.it/350x150", "http://placehold.it/200x500"];
+  })();
+</script>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="/bower_components/photoswipe/dist/photoswipe.js"></script>
+  <script src="/bower_components/photoswipe/dist/photoswipe-ui-default.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="scripts/skrollr.ie.min.js"></script>
+  <![endif]-->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/jquery-2.2.3.min.js"></script>
+  <script src="scripts/jquery.nicescroll.min.js"></script>
+  <script src="scripts/skrollr.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
