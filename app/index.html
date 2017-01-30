@@ -34,6 +34,7 @@
   <!--[if lt IE 10]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div id="home"></div>
   <nav id="nav-outer" class="grid-container">
     <div id="nav-inner" class="row margin-center">
       <a href="#home" id="logo" class="col-4"><img src="images/logo.png" alt="Sanz Logo"></a>
@@ -45,10 +46,11 @@
     </div>
   </nav>
 
+  <!-- TODO: fix/change #skrollr-body -->
   <div id="skrollr-body">
 
     <section id="hero-section" class="skrollr-window">
-      <div id="home-bg-con" class="skrollr-layer"  data-0="top: 0;" data-500="top: 0px;">
+      <div id="home-bg-con" class="skrollr-layer"  data-0="top: 0%;" data-500="top: 20%;">
         <img src="images/home-bg.png" alt="">
       </div>
       <div id="tag-line-con" class="skrollr-layer"  data-0="top: 20%;" data-500="top: 0;">
@@ -58,6 +60,8 @@
         <img src="images/couple.png" alt="">
       </div>
     </section>
+
+  </div>
 
     <section id="services-banner">
       <img class="thin-white-bar" src="images/thin-white-bar.png" alt="">
@@ -80,7 +84,7 @@
         <li>
           <div class="div-frame-outer">
             <div class="div-frame-inner">
-              <h3>New<br/>Developement</h3>
+              <h3>New<br/> Development</h3>
             </div>
           </div>
         </li>
@@ -95,7 +99,25 @@
       <p style="color: white; text-align: center; font-size: 50px; margin-bottom: 20px;">--------------------------------------------------</p>
       <img class="thin-white-bar" src="images/thin-white-bar.png" alt="">
     </section>
-  </div>
+
+    <section id="about-us">
+      <div class="about-us-inner">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem nam deserunt sequi nihil, consectetur fugit qui magni fuga reprehenderit, ut, maiores doloribus, ipsa veritatis porro doloremque earum! Magni hic dolor quod, sed delectus doloremque eius iusto architecto provident, repudiandae veritatis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet qui rem vitae ducimus et voluptas ipsa iure voluptatem ullam modi porro perspiciatis officia officiis eaque, mollitia a veniam dolor nostrum aut quae, provident nobis! Error repudiandae impedit perspiciatis officia! Beatae!</p>
+      </div>
+    </section>
+
+    <section id="request-a-quote">
+      <h2>Request A Quote</h2>
+      <form action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="submit">
+      </form>
+    </section>
 
 
 
@@ -113,8 +135,6 @@
         <li class="our-work-item"><a href=""><img src="images/our-work/our-work-1.png" alt=""></a></li>
       </ul>
     </div> --><!-- #our-work-wrapper -->
-
-  </div><!-- #skrollr-body -->
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
