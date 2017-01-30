@@ -43,6 +43,10 @@ $home-section-header: 40;
     -ms-transform: $transformations;  /* IE 9 */
     transform: $transformations;  /* Firefox 16+, IE 10+, Opera */
 }
+@mixin fixed-wood-bg () {
+  background: url("../images/wood.png");
+  background-attachment: fixed;
+}
 
 /**************************************
  Resets
@@ -290,8 +294,7 @@ nav#nav-outer {
 }
 
 #services-banner {
-  background: url("../images/wood.png");
-  background-attachment: fixed;
+  @include fixed-wood-bg();
   padding: 23px 0;
   position: relative;
 
@@ -317,7 +320,6 @@ nav#nav-outer {
 }
 
 #about-us {
-  background: url("../images/wood-white.png") repeat top left;
   border-bottom: 5px solid #AE361F;
   height: 380px;
 
@@ -344,7 +346,23 @@ nav#nav-outer {
   }
 }
 
+footer {
+  @include fixed-wood-bg();
+  padding: 50px 0;
+  color: #fff;
 
+  ul:first-of-type {
+    @include font-size(30);
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+
+    li {
+      width: 33.33%;
+      float: left;
+    }
+  }
+}
 #our-work-wrapper {
   #our-work-header-con {
     text-align: center;
