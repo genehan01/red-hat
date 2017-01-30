@@ -179,6 +179,10 @@ img {
   text-align: center;
   background: #fff;
 }
+.thin-white-bar {
+  background: url("../images/thin-white-bar.png") repeat-x top left;
+  height: 20px;
+}
 .margin-center {
   margin: 0 auto;
 }
@@ -291,9 +295,6 @@ nav#nav-outer {
   padding: 23px 0;
   position: relative;
 
-  img.thin-white-bar {
-    height: 25px;
-  }
   ul {
     width: 80%;
     overflow: hidden;
