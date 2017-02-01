@@ -51,6 +51,11 @@ $dark-brown: #AE361F;
   background-position: center;
   background-repeat: no-repeat;
 }
+@mixin white-wood-bg () {
+  background: url("../images/wood-white.png");
+  background-position: top left;
+  background-repeat: repeat;
+}
 
 /**************************************
  Resets
@@ -175,6 +180,7 @@ textarea {
 .div-frame-inner {
   text-align: center;
   background: #fff;
+  padding: 0 90px;
 }
 .thin-white-bar {
   background: url("../images/thin-white-bar.png") repeat-x top left;
@@ -299,10 +305,7 @@ nav#nav-outer {
 }
 
 #about-us {
-  background: url("../images/wood-white.png") repeat top left;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include white-wood-bg();
   border-bottom: 5px solid $dark-brown;
   min-height: 400px;
 
@@ -330,7 +333,7 @@ nav#nav-outer {
 }
 
 #request-a-quote {
-  background: url("../images/wood-white.png") repeat;
+  @include white-wood-bg();
   padding: 0 0 20px 0;
   min-height: 275px;
   font-weight: 800;
@@ -356,6 +359,18 @@ nav#nav-outer {
         height: 35px;
         padding-left: 5px;
 
+
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        @include white-wood-bg();
+        // For fun with white-wood-bg
+        background-attachment: fixed;
+        -moz-box-shadow:    inset 0 0 12px #000000;
+        -webkit-box-shadow: inset 0 0 12px #000000;
+        box-shadow:         inset 0 0 12px #000000;
       }
       input[name="name"] {
         float: left;
