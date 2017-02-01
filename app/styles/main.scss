@@ -128,18 +128,26 @@ img {
   color: #000;
   padding: 0.2em 0;
 }
+textarea {
+  outline: none; // remove blue glow
+  overflow: auto; // remove IE scrollbars
+}
 /* Placeholer text color */
 ::-webkit-input-placeholder {
-   color: gray;
+  color: gray;
+  font-weight: 800;
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: gray;
+  color: gray;
+  font-weight: 800;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: gray;
+  color: gray;
+  font-weight: 800;
 }
 :-ms-input-placeholder {
-   color: gray;
+  color: gray;
+  font-weight: 800;
 }
 
 /**************************************
@@ -335,25 +343,32 @@ nav#nav-outer {
         padding: 20px 0;
         @include font-size($home-section-header);
       }
-      input {
-        height: 35px;
+      input,
+      textarea {
+        @include font-size(30);
         border: 3px solid $dark-brown;
         margin: 0 0 10px 0;
-        @include font-size(30);
+        height: 35px;
         color: red;
+        padding-left: 5px;
 
       }
-      input:nth-child(1) {
+      input[name="name"] {
         float: left;
         width: 48.5%;
       }
-      input:nth-child(2) {
+      input[name="email-address"] {
         float: right;
         width: 48.5%;
       }
-      input:nth-child(3),
-      input:nth-child(4) {
+      input[name="phone-number"],
+      textarea {
         width: 100%;
+      }
+      textarea {
+        height: 135px;
+        max-height: 500px;
+        resize: vertical;
       }
       input[type="submit"] {
         float: right;
@@ -363,7 +378,11 @@ nav#nav-outer {
         color: #fff;
         text-transform: uppercase;
         font-weight: 800;
+        cursor: pointer;
 
+        &:hover {
+          background-color: $dark-brown;
+        }
       }
     }
   }
