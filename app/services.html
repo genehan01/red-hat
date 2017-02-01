@@ -36,26 +36,28 @@
 <body >
     <div id="our-work-wrapper">
       <h3>kitchen and bath</h3>
-      <ul id="kitchen-and-bath" class="our-work-items">
-        <li class="our-work-item" data-index=""><img src="[{{http://placehold.it/350x150}}]" alt=""></li>
-        <li class="our-work-item"><img src="http://placehold.it/200x500" alt=""></li>
-        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
-        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
-        <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
-        <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
+      <!-- use twig loop properties to fill data indexes -->
+      <ul id="kitchen-and-bath" data-services-index="1" class="our-work-items">
+        <li class="our-work-item" data-index="1"><img src="http://placehold.it/350x15" alt=""></li>
+        <li class="our-work-item" data-index="2"><img src="http://placehold.it/200x500" alt=""></li>
+        <li class="our-work-item" data-index="3"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <li class="our-work-item" data-index="4"><img src="images/our-work/our-work-3.png" alt=""></li>
+        <li class="our-work-item" data-index="5"><img src="images/our-work/our-work-1.png" alt=""></li>
+        <li class="our-work-item" data-index="6"><img src="images/our-work/our-work-3.png" alt=""></li>
       </ul>
+      <button id="btn"></button>
     </div>
 
     <div id="our-work-wrapper">
       <h3>home remodels</h3>
-      <ul id="home-remodels" class="our-work-items">
+      <ul id="home-remodels" data-services-index="2" class="our-work-items">
         <li class="our-work-item "><img src="http://lorempixel.com/400/200/sports" alt=""></li>
         <li class="our-work-item"><img src="http://lorempixel.com/200/400/sports" alt=""></li>
         <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
         <li class="our-work-item"><img src="images/our-work/our-work-3.png" alt=""></li>
         <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
         <li class="our-work-item"><img src="images/our-work/our-work-1.png" alt=""></li>
-        <button id="btn"></button>
+
       </ul>
     </div>
 
@@ -140,18 +142,19 @@
 <script>
   (function () {
     // add additional for loop here to dynamically name the var
-    var photoSwipeImages = [
-      [    [gallery image one, gallery image two, ....] first of six image in grid              ],// kitchen images
-      [                                                                                         ],// home remodels
-      [                                                                                         ],
-      // {{ for image in images }}
-      //   {{ image.url }}
-      // {{ endfor }} ,
-    ];
+    // var photoSwipeImages = [
+    //   [    [gallery image one, gallery image two, ....] first of six image in grid              ],// kitchen images
+    //   [                                                                                         ],// home remodels
+    //   [                                                                                         ],
+    //   // {{ for image in images }}
+    //   //   {{ image.url }}
+    //   // {{ endfor }} ,
+    // ];
 
 
-    var {{kitchenAndBathImages}} = ["http://placehold.it/350x150", "http://placehold.it/200x500"];
-    var kitchenAndBathImages = ["http://placehold.it/350x150", "http://placehold.it/200x500"];
+    swipeImages = [[["http://placehold.it/350x150", "http://lorempixel.com/400/200/sports"]]];
+
+    openPhotoSwipe(swipeImages);
   })();
 </script>
 

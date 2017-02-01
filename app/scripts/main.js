@@ -59,18 +59,18 @@ $(window).load(function () {
   });
 
 
-  function openPhotoSwipe () {
+  function openPhotoSwipe (images) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
 
     // build items array
     var items = [
     {
-        src: 'http://placehold.it/350x150',
+        src: swipeImages[0][0][0],
         w: 600,
         h: 400
     },
     {
-        src: 'http://placehold.it/350x150',
+        src: swipeImages[0][0][1],
         w: 1200,
         h: 900
     }
