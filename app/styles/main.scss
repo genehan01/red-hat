@@ -130,52 +130,33 @@ img {
 }
 /* Placeholer text color */
 ::-webkit-input-placeholder {
-   color: #FFF;
+   color: gray;
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: #FFF;
+   color: gray;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #FFF;
+   color: gray;
 }
 :-ms-input-placeholder {
-   color: #FFF;
+   color: gray;
 }
-
-/**************************************
- Grid System from http://j4n.co/blog/Creating-your-own-css-grid-system
- **************************************/
-.grid-container {
-  width: 100%;
-  height: 100%;
-  // max-width: 1200px;
-}
-.row:before,
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-[class*='col-'] {
-    float: left;
-    min-height: 1px;
-}
-.col-1  { width: 8.33%;   }
-.col-2  { width: 16.66%;  }
-.col-3  { width: 25%;     }
-.col-4  { width: 33.33%;  }
-.col-5  { width: 41.66%;  }
-.col-6  { width: 50%;     }
-.col-7  { width: 58.33%;  }
-.col-8  { width: 66.66%;  }
-.col-9  { width: 75%;     }
-.col-10 { width: 83.33%; }
-.col-11 { width: 91.66%; }
-.col-12 { width: 100%;   }
 
 /**************************************
  Helper Classes
  **************************************/
+.table,
+.table-cell {
+    width: 100%;
+    height: 100%;
+}
+.table {
+    display: table;
+}
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
 .div-frame-outer {
   border: 3px solid #fff;
   padding: 3px;
@@ -188,24 +169,12 @@ img {
   background: url("../images/thin-white-bar.png") repeat-x top left;
   height: 20px;
 }
-.margin-center {
-  margin: 0 auto;
-}
-.absolute-center {
-  margin: auto;
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-}
-.relative {
-  position: relative;
-}
-
 /**************************************
  Skrollr Parallax Helper Classes
  **************************************/
  #skrollr-body {
   // background: url("../images/wood-bg.jpg") repeat-x left top;
-  height: 100%;
+  // height: 100%;
 }
 .skrollr-window {
     position: relative;
@@ -228,27 +197,25 @@ img {
  App Styles
  **************************************/
 nav#nav-outer {
+  width: 100%;
   position: fixed;
-  height: 20%;
+  height: 105px;
   z-index: 1;
-  background: url("../images/navbar-bg.png") repeat-x left top;
+  // background: url("../images/navbar-bg.png") repeat-x left top;
+    background-color: white;
+    border: 1px solid black;
 
   #nav-inner {
-    width: 35%;
-    height: 85px;
-    #logo {
-
-      img {
-
-        width: 100%;
-      }
-    }
+    height: 100%;
     ul {
+      width: 50%;
       height: 100%;
-
+      margin: 0 auto;
+      line-height: 35px;
       li {
-        line-height: 105px;
-        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+        width: 30%;
 
         a {
           // transparent border to stop text
@@ -322,47 +289,111 @@ nav#nav-outer {
 
 #about-us {
   background: url("../images/wood-white.png") repeat top left;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-bottom: 5px solid $dark-brown;
-  height: 380px;
+  min-height: 400px;
 
-  .about-us-inner {
-    width:  25%;
-    margin-left: auto;
-    margin-right: auto;
+  .about-us-outer {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0 20px;
 
-    h2 {
-      padding: 20px 0;
-      @include font-size($home-section-header);
-    }
-    p {
-      text-align: left;
-      padding-bottom: 20px;
+    .about-us-inner {
+      text-align: center;
+      vertical-align: middle;
+
+
+
+      h2 {
+        padding: 20px 0;
+        @include font-size($home-section-header);
+      }
+      p {
+        text-align: left;
+        padding-bottom: 20px;
+      }
     }
   }
 }
 
 #request-a-quote {
-  h2 {
-    padding: 20px 0;
-    @include font-size($home-section-header);
+  min-height: 275px;
+  font-weight: 800;
+
+  .outer-wrapper {
+      width: 50%;
+      margin: 0 auto;
+
+
+    .inner-wrapper {
+      text-align: center;
+      vertical-align: middle;
+
+      h2 {
+        padding: 20px 0;
+        @include font-size($home-section-header);
+      }
+      input {
+        height: 35px;
+        border: 3px solid $dark-brown;
+        margin: 0 0 10px 0;
+        @include font-size(30);
+        color: red;
+
+      }
+      input:nth-child(1) {
+        float: left;
+        width: 48.5%;
+      }
+      input:nth-child(2) {
+        float: right;
+        width: 48.5%;
+      }
+      input:nth-child(3),
+      input:nth-child(4) {
+        width: 100%;
+      }
+      input[type="submit"] {
+        float: right;
+        width: 25%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 800;
+
+      }
+    }
   }
 }
 
 footer {
   @include fixed-wood-bg();
-  padding: 50px 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  width: 100%;
   color: #fff;
 
-  ul:first-of-type {
-    @include font-size(30);
-    overflow: hidden;
-    width: 50%;
-    margin: 0 auto;
+  .footer-outer-wrapper {
+    float: right;
+    position: relative;
+    left: -50%;
 
-    li {
-      width: 33.33%;
-      float: left;
+    ul {
+      margin: 50px auto;
+      position: relative;
+      left: 50%;
+
+      li {
+        float: left;
+      }
     }
+
   }
 }
 

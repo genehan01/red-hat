@@ -38,13 +38,13 @@
   <![endif]-->
   <div id="home"></div>
 
-  <nav id="nav-outer" class="grid-container">
-    <div id="nav-inner" class="row margin-center">
-      <a href="#home" id="logo" class="col-4"><img src="images/logo.png" alt="Sanz Logo"></a>
-      <ul class="col-8">
-        <li class="col-4"><a href="#services">Services</a></li>
-        <li class="col-4"><a href="#request-a-quote">Request<br/>A Quote</a></li>
-        <li class="col-4"><a href="#about-us">About Us</a></li>
+  <nav id="nav-outer">
+    <div id="nav-inner">
+      <!-- <a href="#home" id="logo"><img src="images/logo.png" alt="Sanz Logo"></a> -->
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a id="request" href="#request-a-quote">Request<br>A Quote</a></li>
+        <li><a href="#about-us">About Us</a></li>
       </ul>
     </div>
   </nav>
@@ -104,38 +104,46 @@
   </section>
 
   <section id="about-us">
-    <div class="about-us-inner">
+  <div class="about-us-outer table">
+    <div class="about-us-inner table-cell">
       <h2>About Us</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem nam deserunt sequi nihil, consectetur fugit qui magni fuga reprehenderit, ut, maiores doloribus, ipsa veritatis porro doloremque earum! Magni hic dolor quod, sed delectus doloremque eius iusto architecto provident, repudiandae veritatis.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet qui rem vitae ducimus et voluptas ipsa iure voluptatem ullam modi porro perspiciatis officia officiis eaque, mollitia a veniam dolor nostrum aut quae, provident nobis! Error repudiandae impedit perspiciatis officia! Beatae!</p>
     </div>
+    </div>
   </section>
 
-  <section id="request-a-quote">
-    <h2>Request A Quote</h2>
-    <form action="">
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <input type="submit">
-    </form>
+  <section id="request-a-quote" >
+    <div class="outer-wrapper table">
+      <div class="inner-wrapper table-cell">
+        <h2>Request A Quote</h2>
+        <form action="">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Email">
+          <input type="text" placeholder="Phone">
+          <input type="text" placeholder="Message">
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <ul>
-      <li>Licensing</li>
-      <!-- TODO: if on home page, dont show 'about' -->
-      <li>About Us</li>
-      <li>Terms of Use</li>
-    </ul>
-    <div class="thin-white-bar"></div>
-    <!-- TODO: dynamically change copy year -->
-    <p>&copy; 2017 Sanz Construction</p>
-    <ul class="social-icons">
-      <li class="social-icons">FB</li>
-      <li class="social-icons">TW</li>
-    </ul>
+    <div class="footer-outer-wrapper">
+      <ul>
+        <li>Licensing</li>
+        <li>About Us</li>
+        <li>Terms of Use</li>
+      </ul>
+    </div>
+      <div class="thin-white-bar"></div>
+       <div class="footer-outer-wrapper">
+      <!-- TODO: dynamically change copy year -->
+      <p>&copy; 2017 Sanz Construction</p>
+      <ul class="social-icons">
+        <li class="social-icons">FB</li>
+        <li class="social-icons">TW</li>
+      </ul></div>
   </footer>
 
    <!--  <div id="our-work-wrapper">
