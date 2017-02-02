@@ -51,13 +51,15 @@ $white: #fff;
 @mixin fixed-wood-bg () {
   background: url("../images/wood.png");
   background-attachment: fixed;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: repeat-y;
+  // -101 is to cover white left sliver of body showing
+  background-size: 101% 100%;
+  background-position: left top;
+  background-repeat: repeat;
 }
-@mixin white-wood-bg () {
-  background: url("../images/wood-white.png");
-  background-position: top left;
+@mixin white-wood-bg ($posX, $posY) {
+  background: url("../images/wood-white.jpg");
+  background-position: $posX $posY;
+  background-size: 100%;
   background-repeat: repeat;
 }
 
@@ -229,7 +231,7 @@ nav#nav-outer {
   z-index: 1;
   background: url("../images/nav-bg.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 101% 100%;
   background-position: center center;
 
   #nav-inner {
@@ -336,7 +338,7 @@ nav#nav-outer {
 }
 
 #about-us-section {
-  @include white-wood-bg();
+  @include white-wood-bg(left, top);
   border-bottom: 5px solid $dark-brown;
   min-height: 400px;
 
@@ -364,7 +366,7 @@ nav#nav-outer {
 }
 
 #request-a-quote {
-  @include white-wood-bg();
+  @include white-wood-bg(left, bottom);
   padding: 0 0 20px 0;
   min-height: 275px;
   font-weight: 800;
@@ -385,7 +387,7 @@ nav#nav-outer {
       input,
       textarea {
         @include font-size(30);
-        border: 3px solid $dark-brown;
+        border: 2px solid $dark-brown;
         margin: 0 0 10px 0;
         height: 35px;
         padding-left: 5px;
@@ -396,7 +398,7 @@ nav#nav-outer {
       input[type="email"],
       input[type="tel"],
       textarea {
-        @include white-wood-bg();
+        @include white-wood-bg(top, left);
         // For fun with white-wood-bg
           // TODO: add ie support with
           // https://css-tricks.com/snippets/css/css-box-shadow/
