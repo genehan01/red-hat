@@ -51,9 +51,9 @@ $white: #fff;
 @mixin fixed-wood-bg () {
   background: url("../images/wood.png");
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: repeat-y;
 }
 @mixin white-wood-bg () {
   background: url("../images/wood-white.png");
@@ -313,7 +313,7 @@ nav#nav-outer {
   @include fixed-wood-bg();
   padding: 23px 0;
   position: relative;
-
+  min-height: 500px;
   ul {
     width: 80%;
     overflow: hidden;
