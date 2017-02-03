@@ -82,7 +82,7 @@ ruby,section,summary,time,mark,audio,video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  // vertical-align: baseline;
 }
 html {
   @include box-sizing(border-box);
@@ -101,18 +101,10 @@ footer,header,hgroup,menu,nav,section {
 }
 body {
   font: 13px/1.1 Helvetica,sans-serif;
-  line-height: 1;
   text-align: center;
 }
 ol,ul {
   list-style: none;
-}
-blockquote,q {
-  quotes: none;
-}
-blockquote:before,blockquote:after,q:before,q:after {
-  content: '';
-  content: none;
 }
 table{
   border-collapse: collapse;
@@ -185,13 +177,26 @@ textarea {
   margin-top: -$nav-height;
 }
 .div-frame-outer {
-  border: 3px solid $white;
-  padding: 3px;
-}
-.div-frame-inner {
-  text-align: center;
-  background: $white;
-  padding: 0 90px;
+  height: 100%;
+  width: 100%;
+  display: table;
+  vertical-align: middle;
+
+  .div-frame-middle {
+    border: 3px solid $white;
+    padding: 3px;
+    text-align: center;
+position:relative;
+vertical-align:middle;
+display:table-cell;
+
+    .div-frame-inner {
+      text-align: center;
+margin-left:auto;
+margin-right:auto;
+    }
+  }
+
 }
 .thin-white-bar {
   background: url("../images/thin-white-bar.png") repeat-x top left;
@@ -316,21 +321,34 @@ nav#nav-outer {
   padding: 23px 0;
   position: relative;
   min-height: 500px;
+
   ul {
-    width: 80%;
+    width: 40%;
     overflow: hidden;
     margin: 0 auto;
     li {
       float: left;
-      padding: 0 20px;
+
       width: 50%;
+      padding: 10px 10px;
 
-      .div-frame-inner {
-        font-weight: 700;
-        font-size: 30px;
+      .div-frame-outer {
+        min-height: 100px;
+        .div-frame-inner {
+          h3 {
+            width: 100%;
+            text-transform: uppercase;
+            @include font-size(30);
 
-        h3 {
-          text-transform: uppercase;
+            font-weight: 700;
+          }
+          // &:before {
+          //   content: "";
+          //   display: inline-block;
+          //   vertical-align: middle;
+          //   height: 100%;
+          // }
+
         }
       }
     }
