@@ -177,24 +177,17 @@ textarea {
   margin-top: -$nav-height;
 }
 .div-frame-outer {
-  height: 100%;
-  width: 100%;
   display: table;
-  vertical-align: middle;
+  border: 3px solid $white;
+  padding: 3px;
+  width: 100%;
 
-  .div-frame-middle {
-    border: 3px solid $white;
-    padding: 3px;
+  .div-frame-inner {
+    display:table-cell;
+    vertical-align: middle;
     text-align: center;
-position:relative;
-vertical-align:middle;
-display:table-cell;
-
-    .div-frame-inner {
-      text-align: center;
-margin-left:auto;
-margin-right:auto;
-    }
+    height: 100px;
+    background: $white;
   }
 
 }
@@ -333,7 +326,7 @@ nav#nav-outer {
       padding: 10px 10px;
 
       .div-frame-outer {
-        min-height: 100px;
+
         .div-frame-inner {
           h3 {
             width: 100%;
