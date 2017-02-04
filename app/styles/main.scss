@@ -293,20 +293,23 @@ nav#nav-outer {
   }
 }
 
+.skrollr-body {
+  display: block;
+}
 #hero-section {
   position: relative;
-  // padding-top: 66.6vh;
-  padding-top: 100vh;
+  padding-top: 100%;
 
 
   #home-bg-con {
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  background: url(../images/home-bg.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100%;
   }
   #tag-line-con {
+  background: url(../images/tag-line2.png) no-repeat center center;
+  background-size: 100%;
+
     img {
 
     }

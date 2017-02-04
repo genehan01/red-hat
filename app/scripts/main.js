@@ -1,4 +1,11 @@
+//     $(window).on('scroll', function() {
+//     console.log( $(this).scrollTop() );
+// });
+
+
+
 $(window).load(function () {
+
   $('html').niceScroll({
     // cursorcolor: "#424242", // change cursor color in hex
     // cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
@@ -58,37 +65,36 @@ $(window).load(function () {
     refresh: $('body')
   });
 
+  // function openPhotoSwipe (images) {
+  //   var pswpElement = document.querySelectorAll('.pswp')[0];
 
-  function openPhotoSwipe (images) {
-    var pswpElement = document.querySelectorAll('.pswp')[0];
+  //   // build items array
+  //   var items = [
+  //   {
+  //       src: swipeImages[0][0][0],
+  //       w: 600,
+  //       h: 400
+  //   },
+  //   {
+  //       src: swipeImages[0][0][1],
+  //       w: 1200,
+  //       h: 900
+  //   }
+  //   ];
 
-    // build items array
-    var items = [
-    {
-        src: swipeImages[0][0][0],
-        w: 600,
-        h: 400
-    },
-    {
-        src: swipeImages[0][0][1],
-        w: 1200,
-        h: 900
-    }
-    ];
+  //   // define options (if needed)
+  //   var options = {
+  //   // optionName: 'option value'
+  //   // for example:
+  //   index: 0 // start at first slide
+  //   };
 
-    // define options (if needed)
-    var options = {
-    // optionName: 'option value'
-    // for example:
-    index: 0 // start at first slide
-    };
+  //   // Initializes and opens PhotoSwipe
+  //   var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+  //   gallery.init();
 
-    // Initializes and opens PhotoSwipe
-    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-    gallery.init();
-
-    }
+  //   }
 
 
-    document.getElementById('btn').onclick = openPhotoSwipe;
+  //   document.getElementById('btn').onclick = openPhotoSwipe;
 });
