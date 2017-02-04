@@ -274,10 +274,11 @@ nav#nav-outer {
         // transparent border to stop text
         // from shifting upon hover state
         border: 3px solid transparent;
-        transition: border .4s;
+        @include transition (border-color 0.5s);
 
         &:hover {
           border-color: rgba(118, 101, 85, 1);
+          @include transition (border 0.6s);
         }
         a {
 
@@ -496,25 +497,37 @@ footer {
         padding: 20px 5px 5px;
 
       li {
+        position: relative;
         @include font-size(30);
         display: inline-block;
         padding: 0 20px;
         border: 2px solid transparent;
-        margin: 0 1px;
+        margin: 0 11px;
         height: 35px;
         vertical-align: middle;
-        transition: border-color 0.4s;
+        @include transition (border-color 0.5s);
 
         &:hover {
           border-color: $light-tan;
-          transition: all 0.4s;
+          @include transition (border 0.6s);
         }
-
+        & + li::before {
+          content: " | ";
+          @include font-size(30);
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: -17px;
+          vertical-align: top;
+        }
         a {
           line-height: 38px;
           color: $light-tan;
         }
       }
+
+
+
     }
   }
 
