@@ -16,6 +16,7 @@ $nav-height: 105px;
 // Colors:
 $dark-brown: #AF3720;
 $white: #fff;
+$light-tan: #E5D7CB;
 
 /*****************************
  SCSS Mixins
@@ -484,30 +485,29 @@ nav#nav-outer {
 footer {
   @include fixed-wood-bg();
   font-family: 'DINEngsbek';
-  color: $white;
-  min-height: 300px;
+  color: $light-tan;
   width: 100%;
 
   .footer-upper-half {
     @include font-size(10);
 
     ul.links {
-
         padding: 20px 0;
 
       li {
         @include font-size(30);
         display: inline-block;
         padding: 0 20px;
-        border-right: 2px solid $white;
+        border: 2px solid transparent;
         height: 35px;
 
-        &:last-child {
-          border-right: none;
+        &:hover {
+          border-color: $light-tan;
         }
+
         a {
-        vertical-align: top;
-          color: $white;
+          vertical-align: middle;
+          color: $light-tan;
 
         }
       }
@@ -519,15 +519,20 @@ footer {
   }
 
   .footer-lower-half {
-    p,
-    ul,
-    li {
+    .copyright,
+    ul.social-icons,
+    li.social-icon {
       display: inline-block;
+    }
+    .copyright {
+      @include font-size(23);
+      margin: 0 25px;
     }
     ul.social-icons {
 
       li.social-icon {
-
+        width: 25px;
+        vertical-align: middle;
       }
     }
   }
