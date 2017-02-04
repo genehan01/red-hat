@@ -298,30 +298,23 @@ nav#nav-outer {
 }
 #hero-section {
   position: relative;
-  padding-top: 100%;
-
+  padding-top: 75%;
 
   #home-bg-con {
-  background: url(../images/home-bg.jpg) no-repeat center center;
-  background-size: cover;
-  height: 100%;
+    background: url(../images/home-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%
   }
   #tag-line-con {
-  background: url(../images/tag-line2.png) no-repeat center center;
-  background-size: 100%;
-
-    img {
-
-    }
+    background: url(../images/tag-line2.png) no-repeat center center;
+    background-size: 100%;
   }
   #couple-con {
-    text-align: left;
-    >img {
-      position: absolute;
-      left: 3%;
-      width: 35%;
-      bottom: 30%;
-    }
+    background: url(../images/couple.png) no-repeat top left;
+    background-size: 28%;
+
+
   }
 }
 

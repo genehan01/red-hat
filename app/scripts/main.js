@@ -5,7 +5,18 @@
 
 
 $(window).load(function () {
-
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
   $('html').niceScroll({
     // cursorcolor: "#424242", // change cursor color in hex
     // cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
@@ -97,4 +108,5 @@ $(window).load(function () {
 
 
   //   document.getElementById('btn').onclick = openPhotoSwipe;
+
 });
