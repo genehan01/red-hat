@@ -157,20 +157,16 @@ textarea {
 }
 /* Placeholer text color */
 ::-webkit-input-placeholder {
-  color: gray;
-  font-weight: 800;
+  color: silver;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: gray;
-  font-weight: 800;
+  color: silver;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-  color: gray;
-  font-weight: 800;
+  color: silver;
 }
 :-ms-input-placeholder {
-  color: gray;
-  font-weight: 800;
+  color: silver;
 }
 
 /**************************************
@@ -433,60 +429,67 @@ nav#nav-outer {
         padding: 20px 0;
         @include font-size($home-h2);
       }
-      input,
-      textarea {
-        @include font-size(30);
-        border: 2px solid $dark-brown;
-        margin: 0 0 10px 0;
-        height: 35px;
-        padding-left: 5px;
+      form{
 
+        input,
+        textarea {
+          @include font-size(20);
+          border: 2px solid $dark-brown;
+          margin: 0 0 10px 0;
+          height: 35px;
+          padding-left: 5px;
 
-      }
-      input[type="text"],
-      input[type="email"],
-      input[type="tel"],
-      textarea {
-        @include white-wood-bg(top, left);
-        // For fun with white-wood-bg
-          // TODO: add ie support with
-          // https://css-tricks.com/snippets/css/css-box-shadow/
-        background-attachment: fixed;
-        -moz-box-shadow:    inset 0 0 12px #000000;
-        -webkit-box-shadow: inset 0 0 12px #000000;
-        box-shadow:         inset 0 0 12px #000000;
-      }
-      input[name="name"] {
-        float: left;
-        width: 48.5%;
-      }
-      input[name="email-address"] {
-        float: right;
-        width: 48.5%;
-      }
-      input[name="phone-number"],
-      textarea {
-        width: 100%;
-      }
-      textarea {
-        height: 135px;
-        max-height: 500px;
-        resize: vertical;
-      }
-      input[type="submit"] {
-        float: right;
-        width: 20%;
-        padding: 0;
-        border: none;
-        margin: 0;
-        background-color: #000;
-        color: $white;
-        text-transform: uppercase;
-        font-weight: 800;
-        cursor: pointer;
+          // TODO: get licensed font from Chris
+          font-family: 'Blacksword';
 
-        &:hover {
-          background-color: $dark-brown;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+          @include white-wood-bg(top, left);
+          // For fun with white-wood-bg
+            // TODO: add ie support with
+            // https://css-tricks.com/snippets/css/css-box-shadow/
+          background-attachment: fixed;
+          -moz-box-shadow:    inset 0 0 12px #000000;
+          -webkit-box-shadow: inset 0 0 12px #000000;
+          box-shadow:         inset 0 0 12px #000000;
+        }
+        input[name="name"] {
+          float: left;
+          width: 48.5%;
+        }
+        input[name="email-address"] {
+          float: right;
+          width: 48.5%;
+        }
+        input[name="phone-number"],
+        textarea {
+          width: 100%;
+        }
+        textarea {
+          height: 135px;
+          max-height: 500px;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          float: right;
+          font-family: 'BigMummy';
+          width: 100px;
+          height: 29px;
+          padding: 0;
+          border: none;
+          margin: 0;
+          background-color: #000;
+          color: $white;
+          text-transform: uppercase;
+          font-weight: 800;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $dark-brown;
+          }
         }
       }
     }
