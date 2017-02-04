@@ -1,25 +1,19 @@
-//     $(window).on('scroll', function() {
-//     console.log( $(this).scrollTop() );
-// });
-
-
-
 $(window).load(function () {
 
-//
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 650);
-        return false;
+    // Smooth scrolling to anchor tag
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 650);
+          return false;
+        }
       }
-    }
-  });
-  $('html').niceScroll({
+    });
+    $('html').niceScroll({
     // cursorcolor: "#424242", // change cursor color in hex
     // cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
     // cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
@@ -74,9 +68,9 @@ $(window).load(function () {
     // disablemutationobserver: false // force MutationObserver disabled
   });
 
-  skrollr.init({
-    refresh: $('body')
-  });
+skrollr.init({
+  refresh: $('body')
+});
 
   // function openPhotoSwipe (images) {
   //   var pswpElement = document.querySelectorAll('.pswp')[0];
