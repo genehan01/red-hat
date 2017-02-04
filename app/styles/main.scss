@@ -1,12 +1,17 @@
 // bower:scss
 // endbower
+
 @import 'fonts';
+
 /*****************************
  SCSS Variables
 ******************************/
+// Font Sizes:
 $default-font-size: 17;
+$home-h2: 25;
+
+// Globals:
 $nav-height: 105px;
-$home-section-header: 40;
 
 // Colors:
 $dark-brown: #AF3720;
@@ -52,9 +57,7 @@ $white: #fff;
 @mixin fixed-wood-bg () {
   background: url("../images/wood.png");
   background-attachment: fixed;
-  // -101 is to cover white left sliver of body showing
-  background-size: 101% 100%;
-  background-position: left top;
+  background-position: center top;
   background-repeat: repeat;
 }
 @mixin white-wood-bg ($posX, $posY) {
@@ -63,7 +66,18 @@ $white: #fff;
   background-size: 100%;
   background-repeat: repeat;
 }
+@mixin thin-white-bar-top ($margin) {
+  background: url("../images/thin-white-bar-top.png") repeat-x bottom center;
+  height: 70px;
 
+  margin: $margin;
+}
+@mixin thin-white-bar-bottom ($margin) {
+  background: url("../images/thin-white-bar-bottom.png") repeat-x top center;
+  height: 70px;
+
+  margin: $margin;
+}
 /**************************************
  Resets
  **************************************/
@@ -100,9 +114,11 @@ article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
   display: block;
 }
+
 body {
   font: 13px/1.1 Helvetica,sans-serif;
   text-align: center;
+  font-family: 'BigMummy';
 }
 ol,ul {
   list-style: none;
@@ -187,15 +203,11 @@ textarea {
     display:table-cell;
     vertical-align: middle;
     text-align: center;
-    height: 100px;
     background: $white;
   }
 
 }
-.thin-white-bar {
-  background: url("../images/thin-white-bar.png") repeat-x top left;
-  height: 20px;
-}
+
 /**************************************
  Skrollr Parallax Helper Classes
  **************************************/
@@ -275,6 +287,9 @@ nav#nav-outer {
         &:hover {
           border: 3px solid rgba(118, 101, 85, 1);
         }
+        a {
+
+        }
       }
       li#request {
           line-height: 20px;
@@ -312,29 +327,49 @@ nav#nav-outer {
 
 #services-banner {
   @include fixed-wood-bg();
-  padding: 23px 0;
+  padding: 25px 0;
   position: relative;
   min-height: 500px;
 
+  .thin-white-bar-top {
+    @include thin-white-bar-top( 0 0 50px 0);
+  }
+  .thin-white-bar-bottom {
+    @include thin-white-bar-bottom(70px 0 0 0);
+  }
+  h2 {
+    color: transparent;
+    text-indent: -5000px;
+    background: url(../images/services-header.png) no-repeat center;
+    background-size: 450px;
+    height: 110px;
+  }
   ul {
     width: 40%;
     overflow: hidden;
     margin: 0 auto;
+
     li {
       float: left;
-
       width: 50%;
       padding: 10px 10px;
 
       .div-frame-outer {
-
         .div-frame-inner {
+          background: url(../images/service-link-bg.png) no-repeat center;
+          height: 75px;
+
           h3 {
+            padding: 0 10px;
             width: 100%;
-            text-transform: uppercase;
-            @include font-size(30);
+            @include font-size(18);
 
             font-weight: 700;
+            text-transform: uppercase;
+
+            a:hover {
+              color: $dark-brown;
+            }
           }
           // &:before {
           //   content: "";
@@ -355,7 +390,7 @@ nav#nav-outer {
   min-height: 400px;
 
   .about-us-outer {
-    max-width: 380px;
+    width: 300px;
     margin: 0 auto;
     padding: 0 20px;
 
@@ -367,9 +402,11 @@ nav#nav-outer {
 
       h2 {
         padding: 20px 0;
-        @include font-size($home-section-header);
+        @include font-size($home-h2);
       }
       p {
+        font-family: 'Bodini MT';
+        @include font-size(15);
         text-align: left;
         padding-bottom: 20px;
       }
@@ -394,7 +431,7 @@ nav#nav-outer {
 
       h2 {
         padding: 20px 0;
-        @include font-size($home-section-header);
+        @include font-size($home-h2);
       }
       input,
       textarea {
@@ -462,7 +499,7 @@ footer {
   width: 100%;
   color: $white;
 
-  .footer-outer-wrapper {
+  .footer-upper-half {
 
     // float: right;
     // position: relative;
@@ -491,7 +528,18 @@ footer {
     }
 
   }
+  .footer-lower-half {
+    p {
+      display: inline-block;
+    }
+    ul {
+      display: inline-block;
 
+      li {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 /**************************************
