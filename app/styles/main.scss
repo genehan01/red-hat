@@ -8,7 +8,7 @@
 ******************************/
 // Font Sizes:
 $default-font-size: 17;
-$home-h2: 25;
+$home-h2: 24;
 
 // Globals:
 $nav-height: 105px;
@@ -180,7 +180,7 @@ textarea {
     vertical-align: middle;
 }
 .anchor-scroll-tag {
-  display: inline-block;
+  display: block;
   padding-top: $nav-height;
   margin-top: -$nav-height;
 }
@@ -370,11 +370,10 @@ nav#nav-outer {
 #about-us-section {
   @include white-wood-bg(left, top);
   border-bottom: 5px solid $dark-brown;
-  min-height: 400px;
 
   .about-us-outer {
-    width: 300px;
-    margin: 0 auto;
+    width: 290px;
+    margin: 0 auto 10px;
     padding: 0 20px;
 
     .about-us-inner {
@@ -387,7 +386,8 @@ nav#nav-outer {
       }
       p {
         font-family: 'Bodini MT';
-        @include font-size(15);
+        @include font-size(13);
+        font-weight: bold;
         text-align: left;
         padding-bottom: 20px;
       }
@@ -395,7 +395,7 @@ nav#nav-outer {
   }
 }
 
-#request-a-quote {
+#request-a-quote-section {
   @include white-wood-bg(left, bottom);
   padding: 0 0 20px 0;
   min-height: 275px;
@@ -512,17 +512,22 @@ footer {
         }
       }
     }
-
   }
+
+  .thin-white-bar {
+    @include thin-white-bar(0);
+  }
+
   .footer-lower-half {
-    p {
+    p,
+    ul,
+    li {
       display: inline-block;
     }
-    ul {
-      display: inline-block;
+    ul.social-icons {
 
-      li {
-        display: inline-block;
+      li.social-icon {
+
       }
     }
   }
