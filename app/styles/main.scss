@@ -235,9 +235,10 @@ nav#nav-outer {
   height: $nav-height;
   z-index: 1;
   background: url("../images/nav-bg.png");
+  image-rendering: -webkit-optimize-contrast;
   background-repeat: no-repeat;
-  background-size: 101% 100%;
-  background-position: center center;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
   background-color: #404040;
 
   #nav-inner {
