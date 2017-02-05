@@ -115,6 +115,8 @@ body {
   font: 13px/1.1 Helvetica,sans-serif;
   text-align: center;
   font-family: 'BigMummy';
+  -webkit-font-smoothing: antialiased;
+  image-rendering: -webkit-optimize-contrast;
 }
 ol,ul {
   list-style: none;
