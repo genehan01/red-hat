@@ -246,19 +246,20 @@ nav#nav-outer {
     min-width: 760px;
     width: 58%;
     height: 100%;
-/*
-    #logo  {
-      width: 10px;
 
-      img {
-        position: relative;
-        top: 1px;
-        vertical-align: middle;
-      }
-    } */
+    // #logo  {
+    //   width: 10px;
+    //   display: inline-block;
+
+    //   img {
+    //     position: relative;
+    //     top: 1px;
+    //     vertical-align: middle;
+    //   }
+    // }
 
     ul.table {
-      width: 50%;
+      width: 60%;
       margin: 0 auto;
       border-collapse: separate;
       border-spacing: 20px;
@@ -267,9 +268,10 @@ nav#nav-outer {
       li {
       vertical-align: middle;
         min-width: 110px;
-        width: 33.33%;
+        width: 25%;
         margin: 0 3px;
 
+#logo  img{width: 93%; position: relative; top: 2px;}
         span {
           display: block;
           padding: 2px 4px;
