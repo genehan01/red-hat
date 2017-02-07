@@ -328,10 +328,6 @@ nav#nav-outer {
     li {
       cursor: pointer;
       margin-bottom: 30px;
-
-      &:hover {
-        color: $dark-brown;
-      }
       .div-frame-outer {
         border-width: 2px;
         padding: 2px;
@@ -342,6 +338,10 @@ nav#nav-outer {
           padding: 2px;
           h2 {
             @include font-size(12);
+
+            a:hover {
+              color: $dark-brown;
+            }
           }
         }
       }
