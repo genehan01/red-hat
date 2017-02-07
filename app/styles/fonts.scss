@@ -12,11 +12,13 @@
 
 @font-face {
 	font-family: 'Blacksword';
-	src: url('../fonts/Blacksword.otf');
-	font-weight: 400;
+	src: url('Blacksword.eot');
+	src: url('Blacksword.eot?#iefix') format('embedded-opentype'),
+		url('Blacksword.woff') format('woff'),
+		url('Blacksword.ttf') format('truetype');
+	font-weight: normal;
 	font-style: normal;
 }
-
 @font-face {
     font-family: 'Bodoni MT';
     src: url('../fonts/BodoniMT.eot');
