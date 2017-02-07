@@ -9,10 +9,12 @@
 // Font Sizes:
 $default-font-size: 17;
 $home-h2: 24;
+$mobile-h3: 14;
 
 // Globals:
-$nav-height: 105px;
-
+$nav-bar-height: 105px;
+$mobile-nav-bar-height: 70px;
+$thin-white-bar: 40px;
 // Colors:
 $dark-brown: #AF3720;
 $white: #fff;
@@ -101,9 +103,6 @@ html {
 
 *, *:before, *:after {
   @include box-sizing(inherit);
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
 }
 
 article,aside,details,figcaption,figure,
@@ -187,8 +186,8 @@ textarea {
 }
 .anchor-scroll-tag {
   display: block;
-  padding-top: $nav-height;
-  margin-top: -$nav-height;
+  padding-top: $nav-bar-height;
+  margin-top: -$nav-bar-height;
 }
 .div-frame-outer {
   display: table;
@@ -211,33 +210,67 @@ textarea {
   // background: url("../images/wood-bg.jpg") repeat-x left top;
   // height: 100%;
 }
-.skrollr-window {
-    position: relative;
-    width: 100% !important;
-    overflow: hidden;
-}
-.skrollr-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  img {
-    width: 100%;
-  }
-}
+// .skrollr-window {
+//     position: relative;
+//     width: 100% !important;
+//     overflow: hidden;
+// }
+// .skrollr-layer {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
 
 /**************************************
  App Styles
  **************************************/
+// Mobile Menu
+#menu-icon {
+  display: inline-block;
+  position: absolute;
+  top: 23px;
+  right: 9px;
+  width: 51px;
+  cursor: pointer;
+}
+#mobile-slide-menu-con {
+  z-index: 999;
+  @include fixed-wood-bg ();
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 50px 40px;
+  width: 40%;
+  height: 100%;
+
+  li {
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: $dark-brown;
+    }
+    .div-frame-outer {
+      border-width: 2px;
+      padding: 2px;
+
+      .div-frame-inner {
+        background: url(../images/service-link-bg.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
+// Desktop Nav
 nav#nav-outer {
   width: 100%;
   position: fixed;
-  height: $nav-height;
+  height: $nav-bar-height;
   z-index: 1;
   background: url("../images/nav-bg.png");
-  image-rendering: -webkit-optimize-contrast;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: 50% 50%;
@@ -273,7 +306,7 @@ nav#nav-outer {
         width: 25%;
         margin: 0 3px;
 
-#logo  img{width: 93%; position: relative; top: 2px;}
+        #logo  img{width: 93%; position: relative; top: 2px;}
         span {
           display: block;
           padding: 2px 4px;
@@ -288,21 +321,19 @@ nav#nav-outer {
         }
       }
     }
+    #menu-icon {
+      display: none;
+    }
+    #menu-slide-menu-con {
+
+    }
   }
 }
 
-.skrollr-body {
-  display: block;
-}
 #hero-section {
-  position: relative;
-  padding-top: 75%;
-
   #home-bg-con {
-    background: url(../images/home-bg.jpg) no-repeat center center;
+    background: url(../images/home-bg.jpg) no-repeat 50% 50%;
     background-size: 100% 100%;
-    height: 100%;
-    width: 100%
   }
   #tag-line-con {
     background: url(../images/tag-line2.png) no-repeat center center;
@@ -312,6 +343,35 @@ nav#nav-outer {
     background: url(../images/couple.png) no-repeat top left;
     background-size: 28%;
   }
+}
+#test{
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+
+  #home-bg-con {
+    position: absolute;
+    top: 0;
+    left: 0;
+      width: 100%;
+      height: 100%;
+    img{
+      background-image: url(../images/home-bg.jpg);
+      background-size: 100% 100%;
+      background-position: 50% 50%;
+    }
+  }
+  // #tag-line-con {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
+  // #couple-con {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 5%;
+  //   width: 25%;
+  // }
 }
 
 #services-banner {
@@ -476,6 +536,8 @@ nav#nav-outer {
 
 footer {
   @include fixed-wood-bg();
+  @include box-shadow(inset 0 0 10000px #000000);
+
   font-family: 'DINEngsbek';
   color: $light-tan;
   width: 100%;
@@ -598,5 +660,432 @@ footer {
   }
 }
 
+/**************************************
+ Media Queries
+ **************************************/
+
+@media (max-width: 1024px) {
+} /* @media (max-width: 1024px) */
+
+@media (max-width: 768px) {
+
+  nav#nav-outer {
+    height: $nav-bar-height * 0.6;
+
+    #nav-inner {
+      margin: 0 auto;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+
+      ul.table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        margin: 5px auto;
+
+        li {
+
+
+          #logo  img{
+            width: 110px;
+            top: -1px;
+           }
+          span {
+
+          }
+          &:hover span {
+
+          }
+
+
+        }
+      }
+    }
+  }
+
+  #services-banner {
+    min-height: 0;
+    .thin-white-bar-top {
+      margin: 0;
+      height: 40px;
+    }
+    .thin-white-bar-bottom {
+      margin: 0;
+      height: 40px;
+    }
+    h2 {
+      height: 60px;
+    }
+    ul {
+      margin: 0 auto 10px;
+      width: 50%;
+      min-width: 0;
+
+
+      li {
+        padding: 5px 5px;
+
+        .div-frame-outer {
+          .div-frame-inner {
+            height: 65px;
+
+
+            h3 {
+              @include font-size($mobile-h3);
+              padding: 0;
+
+              a:hover {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #about-us-section {
+    border-bottom-width: 7px;
+
+
+    .about-us-outer {
+      width: 40%;
+      .about-us-inner {
+
+        h2 {
+
+
+        }
+        p {
+
+        }
+      }
+    }
+  }
+
+  #request-a-quote-section {
+
+    padding: 10px 15px 30px;
+
+    .outer-wrapper {
+      width: 70%;
+
+      .inner-wrapper {
+
+        h2 {
+
+        }
+        form{
+
+          input,
+          textarea {
+
+          }
+          input[name="name"] {
+
+
+          }
+          input[name="email-address"] {
+
+
+          }
+          input[name="phone-number"],
+          textarea {
+
+          }
+          textarea {
+
+          }
+          input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            @include font-size(23);
+
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    background: url(../images/mobile/footer-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+
+    .footer-upper-half {
+      padding: 10px 0;
+      ul.links {
+        width: 100%;
+        padding: 0;
+
+        li {
+          width: 31%;
+          margin: 0 3px;
+          padding:0 5px;
+
+          // Pipe seperator only
+          // for 2nd link forward
+          & + li::before {
+            left: -9px;
+          }
+          a {
+            @include font-size(28);
+          }
+        }
+      }
+    }
+
+    .thin-white-bar {
+      display: none;
+    }
+
+    // .footer-lower-half {
+    //   overflow: hidden;
+    //   text-align: left;
+    //   padding: 10px 26px 5px;
+
+    //   .copyright,
+    //   ul.social-icons,
+    //   li.social-icon {
+
+
+    //   }
+    //   .copyright {
+    //   }
+    //   ul.social-icons {
+    //     float: right;
+
+    //     li.social-icon {
+    //       a {
+
+
+    //       }
+    //     }
+    //   }
+    // }
+  }
+} /* @media (max-width: 768px) */
+
+@media (max-width: 480px) {
+  body {
+    min-width: 480px;
+  }
+  &.mobile-open {
+    position: fixed;
+    overflow: hidden;
+  }
+
+
+
+  nav#nav-outer {
+    height: $nav-bar-height * 0.70;
+    position: relative;
+
+    #nav-inner {
+      margin: 0 auto;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+
+      ul.table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        margin: 5px auto;
+
+        li {
+          #logo img{
+            width: 20%;
+            position: relative;
+            top: -3px;
+           }
+          span {
+
+          }
+          &:hover span {
+
+          }
+
+
+
+         &:not(:first-child) {
+          display: none;
+         }
+
+        }
+      }
+    }
+  }
+
+  #services-banner {
+    min-height: 0;
+    .thin-white-bar-top {
+      margin: 0;
+      height: $thin-white-bar * 0.8;
+    }
+    .thin-white-bar-bottom {
+      margin: 0;
+      height: $thin-white-bar * 0.8;
+    }
+    h2 {
+      height: 60px;
+    }
+    ul {
+      margin: 0 auto 10px;
+      width: 80%;
+      min-width: 0;
+
+
+      li {
+        padding: 5px 5px;
+
+        .div-frame-outer {
+          .div-frame-inner {
+            height: 40px;
+
+
+            h3 {
+              @include font-size($mobile-h3);
+              padding: 0;
+
+              a:hover {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #about-us-section {
+    border-bottom-width: 7px;
+
+
+    .about-us-outer {
+      width: 100%;
+      .about-us-inner {
+
+        h2 {
+
+
+        }
+        p {
+
+        }
+      }
+    }
+  }
+
+  #request-a-quote-section {
+
+    padding: 10px 15px 30px;
+
+    .outer-wrapper {
+      width: 100%;
+
+      .inner-wrapper {
+
+        h2 {
+
+        }
+        form{
+
+          input,
+          textarea {
+
+          }
+          input[name="name"] {
+
+
+          }
+          input[name="email-address"] {
+
+
+          }
+          input[name="phone-number"],
+          textarea {
+
+          }
+          textarea {
+
+          }
+          input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            @include font-size(23);
+
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    .footer-upper-half {
+      padding: 10px 0;
+      ul.links {
+        width: 100%;
+        padding: 0;
+
+        li {
+          width: 31%;
+          margin: 0 3px;
+          padding:0 5px;
+
+          &:hover {
+
+
+          }
+          // Pipe seperator only
+          // for 2nd link forward
+          & + li::before {
+            left: -9px;
+          }
+          a {
+            @include font-size(28);
+          }
+        }
+      }
+    }
+
+    .thin-white-bar {
+
+    }
+
+    .footer-lower-half {
+      overflow: hidden;
+      text-align: left;
+      padding: 10px 26px 5px;
+
+      .copyright,
+      ul.social-icons,
+      li.social-icon {
+
+
+      }
+      .copyright {
+      }
+      ul.social-icons {
+        float: right;
+
+        li.social-icon {
+          a {
+
+          }
+        }
+      }
+    }
+  }
+}
 
 
