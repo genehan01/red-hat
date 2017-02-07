@@ -297,11 +297,9 @@ nav#nav-outer {
     background-color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
     z-index: 200;
-    @include transition(background-color 2s);
   }
   #mobile-slide-menu-con {
     z-index: 999;
-
     background-size: 100%;
     position: absolute;
     top: 0;
@@ -309,14 +307,14 @@ nav#nav-outer {
     padding: 50px 30px;
     width: 40%;
     min-height: 1000px;
-    @include transition(right 1s);
+    @include transition(right 1s ease-in-out);
     z-index: 300;
 
     #mobile-menu-bg {
       position: absolute;
       top: 0;
       right: 0;
-      width: 100%
+      width: 100%;
       height: 100%;
       z-index: -1
     }
