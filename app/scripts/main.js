@@ -1,13 +1,13 @@
 $(window).load(function () {
-  var body = $('body');
-  var menuIcon = $("#menu-icon");
-  var mobileMenuUnderlay = $("#mobile-menu-underlay");
+  var bodyDOM = $('body');
+  var menuIcon = $('#menu-icon');
+  var mobileMenuUnderlay = $('#mobile-menu-underlay');
 
-  menuIcon.on("click", toggleMobileMenu);
-  mobileMenuUnderlay.on("click", toggleMobileMenu);
+  menuIcon.on('click', toggleMobileMenu);
+  mobileMenuUnderlay.on('click', toggleMobileMenu);
 
   function toggleMobileMenu () {
-    body.toggleClass("mobile-open");
+    bodyDOM.toggleClass('mobile-open');
   }
 
   // Smooth scrolling to anchor tag
