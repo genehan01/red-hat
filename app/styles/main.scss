@@ -111,6 +111,7 @@ footer,header,hgroup,menu,nav,section {
 }
 
 body {
+  position: absolute;
   font: 13px/1.1 Helvetica,sans-serif;
   text-align: center;
   font-family: 'BigMummy';
@@ -226,52 +227,6 @@ textarea {
 /**************************************
  App Styles
  **************************************/
-// Mobile Menu
-#menu-icon {
-  display: none;
-  position: absolute;
-  top: 23px;
-  right: 9px;
-  width: 51px;
-  cursor: pointer;
-  z-index: 2;
-}
-#mobile-slide-menu-con {
-  display: none;
-  z-index: 999;
-  @include fixed-wood-bg ();
-  background-size: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 50px 30px;
-  width: 40%;
-  height: 100%;
-
-  li {
-    cursor: pointer;
-    margin-bottom: 30px;
-
-    &:hover {
-      color: $dark-brown;
-    }
-    .div-frame-outer {
-      border-width: 2px;
-      padding: 2px;
-
-      .div-frame-inner {
-        background: url(../images/service-link-bg.png) no-repeat center;
-        background-size: 100% 100%;
-        padding: 2px;
-        h2 {
-          @include font-size(12);
-        }
-      }
-    }
-  }
-}
-
-// Desktop Nav Bar
 nav#nav-outer {
   width: 100%;
   position: fixed;
@@ -283,6 +238,7 @@ nav#nav-outer {
   background-position: 50% 50%;
   background-color: #404040;
 
+  // Desktop Nav Bar
   #nav-inner {
     margin: 0 auto;
     min-width: 760px;
@@ -317,11 +273,64 @@ nav#nav-outer {
         }
       }
     }
-    #menu-icon {
-      display: none;
-    }
-    #menu-slide-menu-con {
+  }
 
+  // Mobile Menu
+  #menu-icon {
+    display: none;
+    position: absolute;
+    top: 23px;
+    right: 9px;
+    width: 51px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #mobile-menu-underlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    z-index: 200;
+    @include transition(background-color 2s);
+  }
+  #mobile-slide-menu-con {
+    z-index: 999;
+    @include fixed-wood-bg ();
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: -40%;
+    padding: 50px 30px;
+    width: 40%;
+    min-height: 1000px;
+    @include transition(right 1s);
+    z-index: 300;
+
+    li {
+      cursor: pointer;
+      margin-bottom: 30px;
+
+      &:hover {
+        color: $dark-brown;
+      }
+      .div-frame-outer {
+        border-width: 2px;
+        padding: 2px;
+
+        .div-frame-inner {
+          background: url(../images/service-link-bg.png) no-repeat center;
+          background-size: 100% 100%;
+          padding: 2px;
+          h2 {
+            @include font-size(12);
+          }
+        }
+      }
     }
   }
 }
@@ -811,14 +820,21 @@ footer {
 
 @media (max-width: 480px) {
   body {
-    min-width: 480px;
-  }
-  &.mobile-open {
-    position: fixed;
-    overflow: hidden;
-  }
-  #menu-icon {
-    display: inline-block;
+    &.mobile-open {
+      position: fixed;
+      overflow: hidden;
+
+      nav#nav-outer {
+        #mobile-menu-underlay {
+          display: block;
+              @include transition(background-color 2s);
+
+        }
+        #mobile-slide-menu-con {
+          right: -1%;
+        }
+      }
+    }
   }
 
   nav#nav-outer {
@@ -850,6 +866,9 @@ footer {
          }
         }
       }
+    }
+    #menu-icon {
+      display: inline-block;
     }
   }
 
