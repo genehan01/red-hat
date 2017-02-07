@@ -1,5 +1,14 @@
 $(window).load(function () {
-  var menuIcon = document.getElementById("menu-icon");
+  var body = $('body');
+  var menuIcon = $("#menu-icon");
+  var mobileMenuUnderlay = $("#mobile-menu-underlay");
+
+  menuIcon.on("click", toggleMobileMenu);
+  mobileMenuUnderlay.on("click", toggleMobileMenu);
+
+  function toggleMobileMenu () {
+    body.toggleClass("mobile-open");
+  }
 
   // Smooth scrolling to anchor tag
   $('a[href*="#"]:not([href="#"])').click(function() {
@@ -20,9 +29,14 @@ $(window).load(function () {
     // Optional prop settings
   });
 
+  // Parallax Library Init
   skrollr.init({
     refresh: $('body')
   });
+
+
+
+
 
   // function openPhotoSwipe (images) {
   //   var pswpElement = document.querySelectorAll('.pswp')[0];
