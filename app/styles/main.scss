@@ -242,7 +242,7 @@ textarea {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 50px 40px;
+  padding: 50px 30px;
   width: 40%;
   height: 100%;
 
@@ -260,6 +260,10 @@ textarea {
       .div-frame-inner {
         background: url(../images/service-link-bg.png) no-repeat center;
         background-size: 100% 100%;
+        padding: 2px;
+        h2 {
+          @include font-size(12);
+        }
       }
     }
   }
