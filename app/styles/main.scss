@@ -210,18 +210,18 @@ textarea {
   // background: url("../images/wood-bg.jpg") repeat-x left top;
   // height: 100%;
 }
-// .skrollr-window {
-//     position: relative;
-//     width: 100% !important;
-//     overflow: hidden;
-// }
-// .skrollr-layer {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// }
+.skrollr-window {
+  position: relative;
+  width: 100% !important;
+  overflow: hidden;
+}
+.skrollr-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /**************************************
  App Styles
@@ -270,7 +270,8 @@ textarea {
     }
   }
 }
-// Desktop Nav
+
+// Desktop Nav Bar
 nav#nav-outer {
   width: 100%;
   position: fixed;
@@ -287,17 +288,6 @@ nav#nav-outer {
     min-width: 760px;
     width: 58%;
     height: 100%;
-
-    // #logo  {
-    //   width: 10px;
-    //   display: inline-block;
-
-    //   img {
-    //     position: relative;
-    //     top: 1px;
-    //     vertical-align: middle;
-    //   }
-    // }
 
     ul.table {
       width: 60%;
@@ -336,48 +326,24 @@ nav#nav-outer {
   }
 }
 
+// Parallax Hero Section
 #hero-section {
+  position: relative;
+  padding-top: 70%;
+  overflow: hidden;
+
   #home-bg-con {
-    background: url(../images/home-bg.jpg) no-repeat 50% 50%;
-    background-size: 100% 100%;
+    background: url(../images/home-bg.jpg) no-repeat center bottom;
+    background-size: 100%;
   }
   #tag-line-con {
     background: url(../images/tag-line2.png) no-repeat center center;
-    background-size: 100%;
+    background-size: 75%;
   }
   #couple-con {
     background: url(../images/couple.png) no-repeat top left;
     background-size: 28%;
   }
-}
-#test{
-  position: relative;
-  padding-top: 56.25%;
-  overflow: hidden;
-
-  #home-bg-con {
-    position: absolute;
-    top: 0;
-    left: 0;
-      width: 100%;
-      height: 100%;
-    img{
-      background-image: url(../images/home-bg.jpg);
-      background-size: 100% 100%;
-      background-position: 50% 50%;
-    }
-  }
-  // #tag-line-con {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
-  // #couple-con {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 5%;
-  //   width: 25%;
-  // }
 }
 
 #services-banner {
@@ -671,10 +637,10 @@ footer {
  **************************************/
 
 @media (max-width: 1024px) {
+
 } /* @media (max-width: 1024px) */
 
 @media (max-width: 768px) {
-
   nav#nav-outer {
     height: $nav-bar-height * 0.6;
 
@@ -688,23 +654,18 @@ footer {
         border-collapse: collapse;
         border-spacing: 0;
         width: 80%;
-        margin: 5px auto;
+        margin: 0 auto;
 
         li {
+          @include font-size(12);
 
-
-          #logo  img{
-            width: 110px;
-            top: -1px;
-           }
+          #logo img{
+            width: 80px;
+            top: 1px;
+          }
           span {
-
+            margin: 0 3px;
           }
-          &:hover span {
-
-          }
-
-
         }
       }
     }
@@ -728,7 +689,6 @@ footer {
       width: 50%;
       min-width: 0;
 
-
       li {
         padding: 5px 5px;
 
@@ -736,14 +696,9 @@ footer {
           .div-frame-inner {
             height: 65px;
 
-
             h3 {
               @include font-size($mobile-h3);
               padding: 0;
-
-              a:hover {
-
-              }
             }
           }
         }
@@ -753,7 +708,6 @@ footer {
 
   #about-us-section {
     border-bottom-width: 7px;
-
 
     .about-us-outer {
       width: 40%;
@@ -771,7 +725,6 @@ footer {
   }
 
   #request-a-quote-section {
-
     padding: 10px 15px 30px;
 
     .outer-wrapper {
@@ -788,29 +741,10 @@ footer {
           textarea {
 
           }
-          input[name="name"] {
-
-
-          }
-          input[name="email-address"] {
-
-
-          }
-          input[name="phone-number"],
-          textarea {
-
-          }
-          textarea {
-
-          }
           input[type="submit"] {
             width: 100px;
             height: 30px;
             @include font-size(23);
-
-            &:hover {
-
-            }
           }
         }
       }
@@ -910,25 +844,30 @@ footer {
             top: -3px;
            }
           span {
-
           }
-          &:hover span {
-
-          }
-
-
-
          &:not(:first-child) {
           display: none;
          }
-
         }
       }
     }
   }
 
+  #hero-section {
+    #home-bg-con {
+    }
+    #tag-line-con {
+      background-position: 50% 65%;
+      background-size: 60%;
+    }
+    #couple-con {
+      background-position: 5% 40%;
+      background-size: 25%;
+    }
+  }
   #services-banner {
     min-height: 0;
+
     .thin-white-bar-top {
       margin: 0;
       height: $thin-white-bar * 0.8;
@@ -945,7 +884,6 @@ footer {
       width: 80%;
       min-width: 0;
 
-
       li {
         padding: 5px 5px;
 
@@ -953,14 +891,9 @@ footer {
           .div-frame-inner {
             height: 40px;
 
-
             h3 {
               @include font-size($mobile-h3);
               padding: 0;
-
-              a:hover {
-
-              }
             }
           }
         }
@@ -971,14 +904,11 @@ footer {
   #about-us-section {
     border-bottom-width: 7px;
 
-
     .about-us-outer {
       width: 100%;
       .about-us-inner {
 
         h2 {
-
-
         }
         p {
 
@@ -988,7 +918,6 @@ footer {
   }
 
   #request-a-quote-section {
-
     padding: 10px 15px 30px;
 
     .outer-wrapper {
@@ -1000,23 +929,11 @@ footer {
 
         }
         form{
-
           input,
           textarea {
 
           }
-          input[name="name"] {
 
-
-          }
-          input[name="email-address"] {
-
-
-          }
-          input[name="phone-number"],
-          textarea {
-
-          }
           textarea {
 
           }
@@ -1024,10 +941,6 @@ footer {
             width: 100px;
             height: 30px;
             @include font-size(23);
-
-            &:hover {
-
-            }
           }
         }
       }
@@ -1035,11 +948,12 @@ footer {
   }
 
   footer {
-
     background-attachment: scroll;
     background-size: 100% 100%;
+
     .footer-upper-half {
       padding: 10px 0;
+
       ul.links {
         width: 100%;
         padding: 0;
@@ -1049,10 +963,6 @@ footer {
           margin: 0 3px;
           padding:0 5px;
 
-          &:hover {
-
-
-          }
           // Pipe seperator only
           // for 2nd link forward
           & + li::before {
@@ -1066,7 +976,6 @@ footer {
     }
 
     .thin-white-bar {
-
     }
 
     .footer-lower-half {
@@ -1077,8 +986,6 @@ footer {
       .copyright,
       ul.social-icons,
       li.social-icon {
-
-
       }
       .copyright {
       }
@@ -1087,7 +994,6 @@ footer {
 
         li.social-icon {
           a {
-
           }
         }
       }
