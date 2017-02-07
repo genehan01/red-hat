@@ -2,9 +2,9 @@ $(window).load(function () {
   var bodyDOM = $('body');
   var menuIcon = $('#menu-icon');
   var mobileMenuUnderlay = $('#mobile-menu-underlay');
+  var mobileCloseBtn = $('#mobile-close-btn');
 
-  menuIcon.on('click', toggleMobileMenu);
-  mobileMenuUnderlay.on('click', toggleMobileMenu);
+  menuIcon.add(mobileMenuUnderlay).add(mobileCloseBtn).on('click', toggleMobileMenu);
 
   function toggleMobileMenu () {
     bodyDOM.toggleClass('mobile-open');
