@@ -228,14 +228,16 @@ textarea {
  **************************************/
 // Mobile Menu
 #menu-icon {
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 23px;
   right: 9px;
   width: 51px;
   cursor: pointer;
+  z-index: 2;
 }
 #mobile-slide-menu-con {
+  display: none;
   z-index: 999;
   @include fixed-wood-bg ();
   background-size: 100%;
@@ -881,12 +883,13 @@ footer {
     position: fixed;
     overflow: hidden;
   }
-
-
+  #menu-icon {
+    display: inline-block;
+  }
 
   nav#nav-outer {
     height: $nav-bar-height * 0.70;
-    position: relative;
+    // position: relative;
 
     #nav-inner {
       margin: 0 auto;
