@@ -378,12 +378,12 @@ h3 {
     h2.second-header-line {
       color: transparent;
       text-indent: -5000px;
-      background: url(/images/services-header-black.png) no-repeat center;
-      background-size: 450px;
+      background: url(/images/services/services-header.png) no-repeat center;
+      background-size: 20% auto;
       height: 110px;
     }
     ul.services-list {
-      margin: 0 auto;
+      margin: 20px auto 0;
       overflow: hidden;
       width: 60%;
 
@@ -412,7 +412,7 @@ h3 {
       }
     }
   }
-  section.service-con {
+  section.service-cont {
     margin: 30px 0 0;
     padding-bottom: 30px;
 
@@ -451,6 +451,13 @@ h3 {
     }
   }
 
+  .end-image-section {
+    height: 600px;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
 
 
 
@@ -477,6 +484,7 @@ footer {
   width: 100%;
 
   .footer-upper-half {
+    // @include box-shadow(1px 1px 1px 1px #000);
     @include font-size(10);
 
     ul.links {
