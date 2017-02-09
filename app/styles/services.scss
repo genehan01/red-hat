@@ -363,11 +363,12 @@ h3 {
   // border: 1px dotted red;
 }
 .services-page-wrapper {
-  background-color: blue;
+  background: url(/images/wood.png) no-repeat center center;
+  background-attachment: fixed;
   padding-top: $nav-bar-height;
   text-transform: uppercase;
 
-  .header-con {
+  .header-cont {
     @include white-wood-bg (left, top);
     padding: 40px 0;
     margin-bottom: 15px;
