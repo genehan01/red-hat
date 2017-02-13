@@ -271,11 +271,11 @@ nav#nav-outer {
           // transparent border to stop text
           // from shifting upon hover state
           border: 3px solid transparent;
-          @include transition (border-color 0.5s);
+          @include transition (border-color 0.35s);
         }
         &:hover span {
           border-color: rgba(118, 101, 85, 1);
-          @include transition (border 0.6s);
+          @include transition (border 0.35s);
         }
       }
     }
@@ -454,86 +454,6 @@ nav#nav-outer {
   }
 }
 
-#request-a-quote-section {
-  @include white-wood-bg(left, bottom);
-  padding: 0 0 20px 0;
-  min-height: 275px;
-  font-weight: 800;
-
-  .outer-wrapper {
-      width: 40%;
-      margin: 0 auto;
-
-
-    .inner-wrapper {
-      text-align: center;
-      vertical-align: middle;
-
-      h2 {
-        padding: 20px 0;
-        @include font-size($home-h2);
-      }
-      form{
-
-        input,
-        textarea {
-          background-clip: content-box;
-          // TODO: get licensed font from Chris
-          font-family: 'Blacksword';
-          @include font-size(20);
-          border: 2px solid $dark-brown;
-          margin: 0 0 10px 0;
-          height: 35px;
-          padding-left: 5px;
-          @include white-wood-bg(top, left);
-          // For fun with white-wood-bg
-            // TODO: add ie support with
-            // https://css-tricks.com/snippets/css/css-box-shadow/
-          background-attachment: fixed;
-          @include box-shadow(inset 0 0 12px #000000);
-        }
-        input[name="name"] {
-          float: left;
-          width: 48.5%;
-        }
-        input[name="email-address"] {
-          float: right;
-          width: 48.5%;
-        }
-        input[name="phone-number"],
-        textarea {
-          width: 100%;
-        }
-        textarea {
-          height: 135px;
-          max-height: 500px;
-          resize: vertical;
-        }
-        input[type="submit"] {
-          background: none;
-          @include box-shadow(none);
-          float: right;
-          font-family: 'BigMummy';
-          @include font-size(25);
-          width: 120px;
-          height: 35px;
-          padding: 0;
-          border: none;
-          margin: 0;
-          background-color: #000;
-          color: $white;
-          text-transform: uppercase;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $dark-brown;
-          }
-        }
-      }
-    }
-  }
-}
-
 /*******************************
   Services Page Template
 ********************************/
@@ -625,13 +545,94 @@ nav#nav-outer {
       }
     }
   }
-
   .end-image-section {
     height: 600px;
     width: 100%;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+  }
+}
+
+#request-a-quote-section {
+  @include white-wood-bg(left, bottom);
+  padding: 0 0 20px 0;
+  min-height: 275px;
+  font-weight: 800;
+
+  .outer-wrapper {
+      width: 40%;
+      margin: 0 auto;
+
+
+    .inner-wrapper {
+      text-align: center;
+      vertical-align: middle;
+
+      h2 {
+        padding: 20px 0;
+        @include font-size($home-h2);
+      }
+      form{
+
+        input,
+        textarea {
+          background-clip: content-box;
+          // TODO: get licensed font from Chris
+          font-family: 'Blacksword';
+          @include font-size(20);
+          border: 2px solid $dark-brown;
+          margin: 0 0 10px 0;
+          height: 35px;
+          padding-left: 5px;
+          @include white-wood-bg(top, left);
+          // For fun with white-wood-bg
+            // TODO: add ie support with
+            // https://css-tricks.com/snippets/css/css-box-shadow/
+          background-attachment: fixed;
+          @include box-shadow(inset 0 0 12px #000000);
+        }
+        input[name="name"] {
+          float: left;
+          width: 48.5%;
+        }
+        input[name="email-address"] {
+          float: right;
+          width: 48.5%;
+        }
+        input[name="phone-number"],
+        textarea {
+          width: 100%;
+        }
+        textarea {
+          height: 135px;
+          max-height: 500px;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          background: none;
+          @include box-shadow(none);
+          float: right;
+          font-family: 'BigMummy';
+          @include font-size(25);
+          width: 120px;
+          height: 35px;
+          padding: 0;
+          border: none;
+          margin: 0;
+          background-color: #000;
+          color: $white;
+          text-transform: uppercase;
+          cursor: pointer;
+          @include transition(all 0.3s);
+
+          &:hover {
+            background-color: $dark-brown;
+            @include transition(all 0.3s);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -661,12 +662,13 @@ footer {
         margin: 0 11px;
         height: 35px;
         vertical-align: middle;
-        @include transition (border-color 0.5s);
+        @include transition (border-color 0.35s);
 
         &:hover {
           border-color: $light-tan;
-          @include transition (border 0.6s);
+          @include transition (border 0.35s);
         }
+
         // Pipe seperator only
         // for 2nd link forward
         & + li::before {
@@ -961,14 +963,14 @@ footer {
         padding: 0;
 
         li {
-          width: 31%;
-          margin: 0 3px;
-          padding:0 5px;
+          width: 21%;
+          margin: 0 15px;
+          padding: 0 5px;
 
           // Pipe seperator only
           // for 2nd link forward
           & + li::before {
-            left: -9px;
+            left: -23px;
           }
           a {
             @include font-size(28);
