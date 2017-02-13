@@ -461,11 +461,8 @@ nav#nav-outer {
   Services Page Template
 ********************************/
 .services-page-wrapper {
-  // background: url(/images/wood.png) repeat-y top left;
-  // background-size: 100% auto;
-  // background-attachment: fixed;
-  // padding-top: $nav-bar-height;
   text-transform: uppercase;
+  padding-top: $nav-bar-height;
 
   .header-cont {
     @include white-wood-bg (left, top);
@@ -519,12 +516,14 @@ nav#nav-outer {
     .service-header {
       @include white-wood-bg (left, top);
       margin-bottom: 60px;
-      height: 100px;
+      height: auto;
       .table {
         width: 25%;
         margin: 0 auto;
 
         .table-cell {
+          padding: 10px 0;
+
           img {
             width: 35px;
           }
@@ -554,7 +553,8 @@ nav#nav-outer {
     width: 100%;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center center;
+    background-position: 59%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -814,13 +814,9 @@ footer {
     .about-us-outer {
       width: 40%;
       .about-us-inner {
-
         h2 {
-
-
         }
         p {
-
         }
       }
     }
@@ -831,57 +827,48 @@ footer {
     padding-top: 60px;
 
     .header-cont {
-
-
       h2.first-header-line {
-
       }
       h2.second-header-line {
-
       }
       ul.services-list {
-
-
+        width: 70%;
+        padding: 0 10px;
+        margin: 0 auto;
         li.service-item {
-
+          width: 50%;
+          margin-top: 30px;
 
           a {
-
-
             img {
-
+              width: 100px;
             }
             h3 {
+              padding: 0 30px;
+              margin-top: 7px;
             }
           }
         }
       }
     }
     section.service-cont {
-
-
       .service-header {
-
         .table {
-
+          width: 50%;
 
           .table-cell {
+            padding: 15px 0;
             img {
-
             }
             h3 {
-
             }
           }
         }
       }
       ul {
-
         li {
-
-
+          width: 50%;
           img {
-
           }
         }
       }
@@ -931,8 +918,8 @@ footer {
         padding: 0;
 
         li {
-          width: 27%;
-          margin: 0 25px;
+          width: 24%;
+          margin: 0 20px;
           padding: 0 5px;
 
           // Pipe seperator only
@@ -1001,7 +988,7 @@ footer {
 
         li {
           #logo img{
-            width: 20%;
+            width: 80px;
             position: relative;
             top: -3px;
           }
@@ -1103,10 +1090,9 @@ footer {
 
           a {
             img {
-              width: 50%;
             }
             h3 {
-              @include font-size(10);
+              @include font-size(12);
               margin-top: 7px;
             }
           }
@@ -1117,7 +1103,6 @@ footer {
       margin: 0;
 
       .service-header {
-        height: 125px;
         margin-bottom: 33px;
 
         .table {
@@ -1125,9 +1110,11 @@ footer {
           padding: 0 10px;
 
           .table-cell {
+            padding: 5px 0;
             img {
             }
             h3 {
+              @include font-size(17);
             }
           }
         }
@@ -1143,7 +1130,7 @@ footer {
     }
     .end-image-section {
       background-attachment: scroll;
-      height: 100px;
+      height: 260px;
     }
   }
 
