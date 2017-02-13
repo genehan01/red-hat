@@ -17,6 +17,7 @@ $mobile-nav-bar-height: 70px;
 $thin-white-bar: 40px;
 // Colors:
 $dark-brown: #AF3720;
+$dark-brown-with-opacity: rgba(175, 55, 32, 0.25);
 $white: #fff;
 $light-tan: #E5D7CB;
 
@@ -541,7 +542,22 @@ nav#nav-outer {
         display: block;
         float: left;
         width: 33.33%;
+        cursor: pointer;
+        position: relative;
 
+        &:after {
+          display: none;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $dark-brown-with-opacity;
+        }
+        &:hover:after {
+          display: block;
+        }
         img {
           display: block;
         }
