@@ -62,6 +62,8 @@ $light-tan: #E5D7CB;
   background-attachment: fixed;
   background-position: center top;
   background-repeat: repeat;
+  background-size: 100% auto;
+
 }
 @mixin white-wood-bg ($posX, $posY) {
   background: url("../images/wood-white.jpg");
@@ -116,6 +118,8 @@ body {
   font-family: 'BigMummy';
   -webkit-font-smoothing: antialiased;
   image-rendering: -webkit-optimize-contrast;
+
+  @include fixed-wood-bg ();
 }
 ol,ul {
   list-style: none;
@@ -375,9 +379,8 @@ nav#nav-outer {
 }
 
 #services-banner {
-  @include fixed-wood-bg();
   position: relative;
-  min-height: 500px;
+  min-height: 575px;
 
   .thin-white-bar-top {
     @include thin-white-bar(0 0 30px 0);
@@ -458,10 +461,10 @@ nav#nav-outer {
   Services Page Template
 ********************************/
 .services-page-wrapper {
-  background: url(/images/wood.png) repeat-y top left;
-  background-size: 100% auto;
-  background-attachment: fixed;
-  padding-top: $nav-bar-height;
+  // background: url(/images/wood.png) repeat-y top left;
+  // background-size: 100% auto;
+  // background-attachment: fixed;
+  // padding-top: $nav-bar-height;
   text-transform: uppercase;
 
   .header-cont {
@@ -641,8 +644,7 @@ nav#nav-outer {
  Footer
 *******************************/
 footer {
-  @include fixed-wood-bg();
-  @include box-shadow(inset 0 0 10000px #000000);
+  @include box-shadow(inset 0 0 100px #000000);
 
   font-family: 'DINEngsbek';
   color: $light-tan;
@@ -712,7 +714,7 @@ footer {
     }
     .copyright {
       @include font-size(25);
-      margin: 0 3px 0 0;
+      margin: 0 30px 0 0;
 
     }
     ul.social-icons {
@@ -824,33 +826,6 @@ footer {
     }
   }
 
-  #request-a-quote-section {
-    padding: 10px 15px 30px;
-
-    .outer-wrapper {
-      width: 70%;
-
-      .inner-wrapper {
-
-        h2 {
-
-        }
-        form{
-
-          input,
-          textarea {
-
-          }
-          input[type="submit"] {
-            width: 100px;
-            height: 30px;
-            @include font-size(23);
-          }
-        }
-      }
-    }
-  }
-
   // Services Page Template
   .services-page-wrapper {
     padding-top: 60px;
@@ -911,33 +886,59 @@ footer {
         }
       }
     }
-
     .end-image-section {
       background-attachment: scroll;
       height: 400px;
     }
   }
 
+  //
+  // Global Sections:
+  //
+
+  // Request a Quote
+  #request-a-quote-section {
+    padding: 10px 15px 30px;
+
+    .outer-wrapper {
+      width: 70%;
+
+      .inner-wrapper {
+        h2 { }
+        form{
+          input,
+          textarea {
+          }
+          input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            @include font-size(23);
+          }
+        }
+      }
+    }
+  }
+
   // Footer
   footer {
-    background: url(../images/mobile/footer-bg.png) no-repeat center center;
     background-size: 100% 100%;
 
     .footer-upper-half {
       padding: 10px 0;
+
       ul.links {
         width: 100%;
         padding: 0;
 
         li {
-          width: 21%;
-          margin: 0 15px;
+          width: 27%;
+          margin: 0 25px;
           padding: 0 5px;
 
           // Pipe seperator only
           // for 2nd link forward
           & + li::before {
-            left: -23px;
+            left: -21px;
           }
           a {
             @include font-size(28);
@@ -948,31 +949,20 @@ footer {
     .thin-white-bar {
       height: 40px;
     }
-
-    // .footer-lower-half {
-    //   overflow: hidden;
-    //   text-align: left;
-    //   padding: 10px 26px 5px;
-
-    //   .copyright,
-    //   ul.social-icons,
-    //   li.social-icon {
-
-
-    //   }
-    //   .copyright {
-    //   }
-    //   ul.social-icons {
-    //     float: right;
-
-    //     li.social-icon {
-    //       a {
-
-
-    //       }
-    //     }
-    //   }
-    // }
+    .footer-lower-half {
+      .copyright,
+      ul.social-icons,
+      li.social-icon {
+      }
+      .copyright {
+      }
+      ul.social-icons {
+        li.social-icon {
+          a {
+          }
+        }
+      }
+    }
   }
 } /* @media (max-width: 768px) */
 
