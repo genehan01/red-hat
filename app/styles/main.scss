@@ -476,7 +476,7 @@ nav#nav-outer {
       color: transparent;
       text-indent: -5000px;
       background: url(/images/services/services-header.png) no-repeat center;
-      background-size: 20% auto;
+      background-size: 270px auto;
       height: 110px;
     }
     ul.services-list {
@@ -742,6 +742,36 @@ footer {
 
 } /* @media (max-width: 1024px) */
 
+@media (max-width: 990px) {
+  .services-page-wrapper {
+    .header-cont {
+      h2.first-header-line {
+      }
+      h2.second-header-line {
+      }
+      ul.services-list {
+        width: 70%;
+        margin-top: 0;
+
+        li.service-item {
+          width: 50%;
+          margin-top: 30px;
+
+          a {
+            img {
+              width: 100px;
+            }
+            h3 {
+              padding: 0 30px;
+              margin-top: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   nav#nav-outer {
     height: $nav-bar-height * 0.6;
@@ -830,6 +860,7 @@ footer {
       h2.first-header-line {
       }
       h2.second-header-line {
+        background-size: 270px auto;
       }
       ul.services-list {
         width: 70%;
@@ -1078,7 +1109,7 @@ footer {
       }
       h2.second-header-line {
         background-size: 50% auto;
-        height: 60px;
+        height: 80px;
       }
       ul.services-list {
         width: 100%;
