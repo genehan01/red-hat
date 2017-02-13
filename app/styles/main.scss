@@ -458,7 +458,8 @@ nav#nav-outer {
   Services Page Template
 ********************************/
 .services-page-wrapper {
-  background: url(/images/wood.png) no-repeat center center;
+  background: url(/images/wood.png) repeat-y top left;
+  background-size: 100% auto;
   background-attachment: fixed;
   padding-top: $nav-bar-height;
   text-transform: uppercase;
@@ -732,41 +733,6 @@ footer {
 }
 
 /**************************************
- Services Template Page
- **************************************/
-#our-work-wrapper {
-  text-align: center;
-  width: 85%;
-  margin: 50px auto;
-
-  .our-work-items {
-    overflow: hidden;
-
-    .our-work-item {
-      float: left;
-      width: 33%;
-      // height: 300px;
-
-      a {
-        background-color: $dark-brown;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-
-        img {
-          transition: opacity 0.3s;
-          -webkit-transition: opacity 0.3s;
-        }
-        &:hover img{
-          -webkit-backface-visibility: hidden;
-          opacity: 0.5;
-        }
-      }
-    }
-  }
-}
-
-/**************************************
  Media Queries
  **************************************/
 
@@ -887,7 +853,7 @@ footer {
 
   // Services Page Template
   .services-page-wrapper {
-
+    padding-top: 60px;
 
     .header-cont {
 
@@ -947,7 +913,8 @@ footer {
     }
 
     .end-image-section {
-
+      background-attachment: scroll;
+      height: 400px;
     }
   }
 
@@ -979,7 +946,7 @@ footer {
       }
     }
     .thin-white-bar {
-      display: none;
+      height: 40px;
     }
 
     // .footer-lower-half {
