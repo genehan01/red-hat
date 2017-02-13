@@ -533,10 +533,10 @@ nav#nav-outer {
     }
   }
 }
+
 /*******************************
   Services Page Template
 ********************************/
-
 .services-page-wrapper {
   background: url(/images/wood.png) no-repeat center center;
   background-attachment: fixed;
@@ -633,7 +633,6 @@ nav#nav-outer {
     background-size: cover;
     background-position: center center;
   }
-
 }
 
 /********************************
@@ -884,6 +883,73 @@ footer {
     }
   }
 
+  // Services Page Template
+  .services-page-wrapper {
+
+
+    .header-cont {
+
+
+      h2.first-header-line {
+
+      }
+      h2.second-header-line {
+
+      }
+      ul.services-list {
+
+
+        li.service-item {
+
+
+          a {
+
+
+            img {
+
+            }
+            h3 {
+            }
+          }
+        }
+      }
+    }
+    section.service-cont {
+
+
+      .service-header {
+
+        .table {
+
+
+          .table-cell {
+            img {
+
+            }
+            h3 {
+
+            }
+          }
+        }
+      }
+      ul {
+
+        li {
+
+
+          img {
+
+          }
+        }
+      }
+    }
+
+    .end-image-section {
+
+    }
+  }
+
+  // Footer
   footer {
     background: url(../images/mobile/footer-bg.png) no-repeat center center;
     background-size: 100% 100%;
@@ -910,7 +976,6 @@ footer {
         }
       }
     }
-
     .thin-white-bar {
       display: none;
     }
@@ -951,8 +1016,7 @@ footer {
       nav#nav-outer {
         #mobile-menu-underlay {
           display: block;
-              @include transition(background-color 2s);
-
+          @include transition(background-color 2s);
         }
         #mobile-slide-menu-con {
           right: -1%;
@@ -963,7 +1027,6 @@ footer {
 
   nav#nav-outer {
     height: $nav-bar-height * 0.70;
-    // position: relative;
 
     #nav-inner {
       margin: 0 auto;
@@ -982,7 +1045,7 @@ footer {
             width: 20%;
             position: relative;
             top: -3px;
-           }
+          }
           span {
           }
          &:not(:first-child) {
@@ -1049,17 +1112,83 @@ footer {
 
     .about-us-outer {
       width: 100%;
+
       .about-us-inner {
-
-        h2 {
-        }
-        p {
-
-        }
+        h2 { }
+        p { }
       }
     }
   }
 
+  // Services Page Template
+  .services-page-wrapper {
+    padding-top: 70px;
+    .header-cont {
+      padding: 15px 0;
+      margin-bottom: 10px;
+
+      h2.first-header-line {
+        @include font-size(22);
+      }
+      h2.second-header-line {
+        background-size: 50% auto;
+        height: 60px;
+      }
+      ul.services-list {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0;
+        li.service-item {
+          width: 50%;
+          margin-top: 30px;
+
+          a {
+            img {
+              width: 50%;
+            }
+            h3 {
+              @include font-size(10);
+              margin-top: 7px;
+            }
+          }
+        }
+      }
+    }
+    section.service-cont {
+      margin: 0;
+
+      .service-header {
+        height: 125px;
+        margin-bottom: 33px;
+
+        .table {
+          width: 100%;
+          padding: 0 10px;
+
+          .table-cell {
+            img {
+            }
+            h3 {
+            }
+          }
+        }
+      }
+      ul {
+        li {
+          width: 50%;
+
+          img {
+          }
+        }
+      }
+    }
+    .end-image-section {
+      background-attachment: scroll;
+      height: 100px;
+    }
+  }
+
+  // Global Sections
   #request-a-quote-section {
     padding: 10px 15px 30px;
 
@@ -1067,19 +1196,11 @@ footer {
       width: 100%;
 
       .inner-wrapper {
-
-        h2 {
-
-        }
+        h2 { }
         form{
           input,
-          textarea {
-
-          }
-
-          textarea {
-
-          }
+          textarea { }
+          textarea { }
           input[type="submit"] {
             width: 100px;
             height: 30px;
@@ -1104,7 +1225,7 @@ footer {
         li {
           width: 31%;
           margin: 0 3px;
-          padding:0 5px;
+          padding:0 1px;
 
           // Pipe seperator only
           // for 2nd link forward
@@ -1112,25 +1233,26 @@ footer {
             left: -9px;
           }
           a {
-            @include font-size(28);
+            @include font-size(22);
           }
         }
       }
     }
-
     .thin-white-bar {
     }
-
     .footer-lower-half {
+      width: 90%;
       overflow: hidden;
       text-align: left;
-      padding: 10px 26px 5px;
+      padding: 10px 0px 5px;
+      margin: 0 auto;
 
       .copyright,
       ul.social-icons,
       li.social-icon {
       }
       .copyright {
+        @include font-size(22);
       }
       ul.social-icons {
         float: right;
@@ -1143,5 +1265,4 @@ footer {
     }
   }
 }
-
 
